@@ -906,13 +906,9 @@ h2 {
 }
 
 .priceTop {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 32px;
-  padding-bottom: 32px;
+  padding-bottom: 24px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .dark .priceTop {
