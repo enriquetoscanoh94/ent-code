@@ -228,10 +228,7 @@ function App() {
 
         <div className="pricingCard">
           <div className="priceTop">
-            <div>
-              <p className="priceLabel">{t.priceLabel}</p>
-              <h3>$249 <span>USD</span></h3>
-            </div>
+            <h3>$249 <span>USD</span></h3>
           </div>
 
           <div className="includesGrid">
