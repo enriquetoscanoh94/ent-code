@@ -7,7 +7,7 @@ const EJ_KEY      = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const copy = {
   es: {
-    nav: ["Servicios", "Paquete", "Proceso", "Contacto"],
+    nav: ["Paquete", "Servicios", "Proceso", "Contacto"],
     lang: "EN",
     cta: "Empezar proyecto",
     eyebrow: "Agencia digital para negocios modernos",
@@ -68,7 +68,7 @@ const copy = {
     copyright: "ENT-CODE. Todos los derechos reservados.",
   },
   en: {
-    nav: ["Services", "Package", "Process", "Contact"],
+    nav: ["Package", "Services", "Process", "Contact"],
     lang: "ES",
     cta: "Start project",
     eyebrow: "Digital agency for modern businesses",
@@ -187,7 +187,7 @@ function App() {
 
         <div className={`navlinks${menuOpen ? " open" : ""}`}>
           {t.nav.map((label, i) => (
-            <a key={i} href={`#${["services","package","process","contact"][i]}`} onClick={closeMenu}>
+            <a key={i} href={`#${["package","services","process","contact"][i]}`} onClick={closeMenu}>
               {label}
             </a>
           ))}
@@ -198,7 +198,7 @@ function App() {
             {t.lang}
           </button>
           <button className="iconBtn" onClick={() => setDark(!dark)} aria-label="Cambiar tema">
-            {dark ? "☀️" : "🌙"}
+            {dark ? "Claro" : "Oscuro"}
           </button>
           <a href="#contact" className="navCta" onClick={closeMenu}>{t.cta}</a>
           <button className={`hamburger${menuOpen ? " active" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menú">
@@ -210,43 +210,14 @@ function App() {
       {menuOpen && <div className="mobileOverlay" onClick={closeMenu} />}
 
       <section id="home" className="hero section">
-        <div className="heroText">
-          <p className="eyebrow">{t.eyebrow}</p>
-          <h1>{t.headline}</h1>
-          <p className="subtitle">{t.subtitle}</p>
-          <div className="heroButtons">
-            <a href="#contact" className="btn primary">{t.primary}</a>
-            <a href="#package" className="btn secondary">{t.secondary}</a>
-          </div>
-          <p className="badge">{t.badge}</p>
+        <p className="eyebrow">{t.eyebrow}</p>
+        <h1>{t.headline}</h1>
+        <p className="subtitle">{t.subtitle}</p>
+        <div className="heroButtons">
+          <a href="#contact" className="btn primary">{t.primary}</a>
+          <a href="#package" className="btn secondary">{t.secondary}</a>
         </div>
-
-        <div className="heroCard">
-          <img src="/logo.png" alt="ENT-CODE logo" className="heroLogo" />
-          {t.includes.slice(0, 5).map((item) => (
-            <div className="miniRow" key={item}>
-              <span className="checkIcon">✓</span>
-              <p>{item}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="services" className="section">
-        <div className="sectionHead">
-          <h2>{t.servicesTitle}</h2>
-          <p>{t.servicesSubtitle}</p>
-        </div>
-
-        <div className="grid servicesGrid">
-          {t.services.map(([title, desc, icon]) => (
-            <article className="card" key={title}>
-              <span className="cardIcon">{icon}</span>
-              <h3>{title}</h3>
-              <p>{desc}</p>
-            </article>
-          ))}
-        </div>
+        <p className="badge">{t.badge}</p>
       </section>
 
       <section id="package" className="section packageSection">
@@ -272,6 +243,22 @@ function App() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="services" className="section">
+        <div className="sectionHead">
+          <h2>{t.servicesTitle}</h2>
+          <p>{t.servicesSubtitle}</p>
+        </div>
+
+        <div className="grid servicesGrid">
+          {t.services.map(([title, desc]) => (
+            <article className="card" key={title}>
+              <h3>{title}</h3>
+              <p>{desc}</p>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -610,11 +597,11 @@ a {
 
 .hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 56px;
-  padding-top: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 180px;
+  max-width: 900px;
 }
 
 .eyebrow {
@@ -724,7 +711,6 @@ h1 {
 
 /* ── HERO CARD ───────────────────────────── */
 
-.heroCard,
 .pricingCard,
 .contactForm,
 .card {
@@ -736,7 +722,6 @@ h1 {
   -webkit-backdrop-filter: blur(18px);
 }
 
-.dark .heroCard,
 .dark .pricingCard,
 .dark .contactForm,
 .dark .card {
