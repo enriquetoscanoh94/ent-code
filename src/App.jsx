@@ -211,8 +211,9 @@ function App() {
       {menuOpen && <div className="mobileOverlay" onClick={closeMenu} />}
 
       <section id="home" className="hero section">
+        <div className="heroGlow" />
         <p className="eyebrow">{t.eyebrow}</p>
-        <h1>{t.headline}</h1>
+        <h1 className="heroHeadline">{t.headline}</h1>
         <p className="subtitle">{t.subtitle}</p>
       </section>
 
@@ -592,12 +593,45 @@ a {
 }
 
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-top: 180px;
   max-width: 900px;
+}
+
+.heroGlow {
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero .eyebrow,
+.heroHeadline,
+.hero .subtitle {
+  position: relative;
+  z-index: 1;
+}
+
+.heroHeadline {
+  background: linear-gradient(135deg, #ffffff 30%, #a78bfa 70%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.site:not(.dark) .heroHeadline {
+  background: linear-gradient(135deg, #08080a 30%, #7c3aed 70%, #16a34a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .eyebrow {
