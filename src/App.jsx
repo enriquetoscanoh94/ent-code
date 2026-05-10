@@ -895,10 +895,14 @@ h2 {
   overflow: visible;
   padding: 48px;
   background: linear-gradient(135deg, rgba(255,255,255,0.97), rgba(236,253,245,0.97));
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 0 0 1px rgba(124,58,237,0.25), 0 24px 80px rgba(124,58,237,0.12), 0 0 60px rgba(34,197,94,0.08);
 }
 
 .dark .pricingCard {
-  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(34,197,94,0.06));
+  background: linear-gradient(135deg, rgba(20,20,28,0.98), rgba(12,20,18,0.98));
+  box-shadow: 0 0 0 1px rgba(124,58,237,0.3), 0 24px 80px rgba(124,58,237,0.15), 0 0 80px rgba(34,197,94,0.08);
 }
 
 .priceTop {
@@ -921,6 +925,17 @@ h2 {
   letter-spacing: -0.04em;
   font-weight: 900;
   line-height: 1;
+  background: linear-gradient(135deg, #ffffff 20%, #a78bfa 60%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.site:not(.dark) .priceTitle {
+  background: linear-gradient(135deg, #08080a 20%, #7c3aed 60%, #16a34a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .priceSub {
@@ -974,18 +989,19 @@ h2 {
 .includeItem {
   display: flex;
   align-items: center;
-  gap: 10px;
   padding: 14px 16px;
   border-radius: 14px;
   border: 1px solid rgba(0, 0, 0, 0.07);
+  border-left: 2px solid rgba(34, 197, 94, 0.5);
   background: rgba(255, 255, 255, 0.75);
   font-size: 13px;
   font-weight: 700;
 }
 
 .dark .includeItem {
-  border-color: rgba(255, 255, 255, 0.08);
-  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.06);
+  border-left-color: rgba(34, 197, 94, 0.4);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .checkGreen {
