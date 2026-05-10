@@ -239,7 +239,6 @@ function App() {
               <h2 className="priceTitle">{t.packageTitle}</h2>
               <p className="priceSub">{t.packageSubtitle}</p>
             </div>
-            <div className="priceAmount">$249 <span>USD</span></div>
           </div>
           <div className="includesGrid">
             {t.includes.map((item) => (
@@ -930,7 +929,7 @@ h2 {
 
 .stamp {
   position: absolute;
-  top: -20px;
+  bottom: -20px;
   right: -20px;
   transform: rotate(12deg);
   filter: drop-shadow(0 4px 12px rgba(220, 38, 38, 0.4));
