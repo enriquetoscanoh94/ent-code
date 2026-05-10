@@ -220,24 +220,21 @@ function App() {
         <p className="badge">{t.badge}</p>
       </section>
 
-      <section id="package" className="section packageSection">
-        <div className="sectionHead narrow">
-          <h2>{t.packageTitle}</h2>
-          <p>{t.packageSubtitle}</p>
-        </div>
-
+      <section id="package" className="section">
         <div className="pricingCard">
           <div className="priceTop">
-            <h3>$249 <span>USD</span></h3>
+            <div>
+              <h2 className="priceTitle">{t.packageTitle}</h2>
+              <p className="priceSub">{t.packageSubtitle}</p>
+            </div>
+            <div className="priceAmount">$249 <span>USD</span></div>
           </div>
-
           <div className="includesGrid">
             {t.includes.map((item) => (
-              <div key={item} className="includeItem">
-                {item}
-              </div>
+              <div key={item} className="includeItem">{item}</div>
             ))}
           </div>
+          <a href="#contact" className="btn primary priceCta">{t.cta}</a>
         </div>
       </section>
 
@@ -854,57 +851,67 @@ h2 {
 
 /* ── PACKAGE ─────────────────────────────── */
 
-.packageSection {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 44px;
-  align-items: center;
-}
-
 .pricingCard {
-  padding: 36px;
+  padding: 48px;
   background: linear-gradient(135deg, rgba(255,255,255,0.97), rgba(236,253,245,0.97));
 }
 
 .dark .pricingCard {
-  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(34,197,94,0.07));
+  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(34,197,94,0.06));
 }
 
 .priceTop {
   display: flex;
   justify-content: space-between;
-  gap: 24px;
-  align-items: flex-end;
-  padding-bottom: 28px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+  align-items: flex-start;
+  gap: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 28px;
 }
 
 .dark .priceTop {
-  border-bottom-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
-.priceLabel {
-  margin-bottom: 8px;
-  color: #6d28d9;
-  font-size: 11px;
+.priceTitle {
+  margin-bottom: 10px;
+  font-size: clamp(24px, 3vw, 36px);
+  letter-spacing: -0.04em;
   font-weight: 900;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  line-height: 1;
 }
 
-.priceTop h3 {
+.priceSub {
+  max-width: 520px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #63666d;
   margin: 0;
+}
+
+.dark .priceSub {
+  color: #9090a8;
+}
+
+.priceAmount {
+  flex-shrink: 0;
   font-size: 72px;
   font-weight: 900;
   line-height: 1;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
 }
 
-.priceTop h3 span {
+.priceAmount span {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0;
   color: #8888a0;
+}
+
+.priceCta {
+  margin-top: 28px;
 }
 
 .includesGrid {
