@@ -219,20 +219,16 @@ function App() {
 
       <section id="package" className="section">
         <div className="pricingCard">
-          <div className="stamp">
-            <svg viewBox="0 0 130 130" width="130" height="130">
-              <circle cx="65" cy="65" r="62" fill="#dc2626"/>
-              <circle cx="65" cy="65" r="54" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5"/>
-              <circle cx="65" cy="65" r="58" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1"/>
-              <text fill="white" fontFamily="inherit" fontWeight="900" fontSize="13" letterSpacing="3" textAnchor="middle" x="65" y="52">· INCLUIDO ·</text>
-              <text fill="white" fontFamily="inherit" fontWeight="900" fontSize="26" letterSpacing="-1" textAnchor="middle" x="65" y="72">LOGO</text>
-              <text fill="white" fontFamily="inherit" fontWeight="900" fontSize="20" letterSpacing="1" textAnchor="middle" x="65" y="94">{t.stampFree}</text>
-            </svg>
-          </div>
-          <div className="priceTop">
-            <div>
+          <div className="priceAccentBar" />
+          <div className="priceHeader">
+            <div className="priceHeaderLeft">
+              <p className="priceEyebrow">{t.packageSubtitle}</p>
               <h2 className="priceTitle">{t.packageTitle}</h2>
-              <p className="priceSub">{t.packageSubtitle}</p>
+            </div>
+            <div className="priceBadge">
+              <span className="priceBadgeAmount">$249</span>
+              <span className="priceBadgeCurrency">USD</span>
+              <span className="priceBadgeNote">{lang === "es" ? "pago único" : "one-time"}</span>
             </div>
           </div>
           <div className="includesGrid">
@@ -240,7 +236,18 @@ function App() {
               <div key={item} className="includeItem">{item}</div>
             ))}
           </div>
-          <a href="#contact" className="btn primary priceCta">{t.cta}</a>
+          <div className="priceFooter">
+            <a href="#contact" className="btn primary priceCta">{t.cta}</a>
+            <div className="stamp">
+              <svg viewBox="0 0 130 130" width="110" height="110">
+                <circle cx="65" cy="65" r="62" fill="#dc2626"/>
+                <circle cx="65" cy="65" r="54" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5"/>
+                <text fill="white" fontFamily="inherit" fontWeight="900" fontSize="13" letterSpacing="3" textAnchor="middle" x="65" y="52">· INCLUIDO ·</text>
+                <text fill="white" fontFamily="inherit" fontWeight="900" fontSize="26" letterSpacing="-1" textAnchor="middle" x="65" y="72">LOGO</text>
+                <text fill="white" fontFamily="inherit" fontWeight="900" fontSize="20" letterSpacing="1" textAnchor="middle" x="65" y="94">{t.stampFree}</text>
+              </svg>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -893,16 +900,110 @@ h2 {
 .pricingCard {
   position: relative;
   overflow: visible;
-  padding: 48px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.97), rgba(236,253,245,0.97));
-  border: 1px solid transparent;
-  background-clip: padding-box;
-  box-shadow: 0 0 0 1px rgba(124,58,237,0.25), 0 24px 80px rgba(124,58,237,0.12), 0 0 60px rgba(34,197,94,0.08);
+  padding: 44px;
+  background: rgba(255,255,255,0.97);
+  box-shadow: 0 2px 40px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricingCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(124,58,237,0.15), 0 0 0 1px rgba(124,58,237,0.2);
 }
 
 .dark .pricingCard {
-  background: linear-gradient(135deg, rgba(20,20,28,0.98), rgba(12,20,18,0.98));
-  box-shadow: 0 0 0 1px rgba(124,58,237,0.3), 0 24px 80px rgba(124,58,237,0.15), 0 0 80px rgba(34,197,94,0.08);
+  background: rgba(14,14,20,0.98);
+  box-shadow: 0 2px 40px rgba(0,0,0,0.3);
+}
+
+.dark .pricingCard:hover {
+  box-shadow: 0 20px 60px rgba(124,58,237,0.2), 0 0 0 1px rgba(124,58,237,0.25);
+}
+
+.priceAccentBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 28px 28px 0 0;
+  background: linear-gradient(90deg, #22c55e, #7c3aed);
+}
+
+.priceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  margin-bottom: 28px;
+}
+
+.dark .priceHeader {
+  border-bottom-color: rgba(255,255,255,0.07);
+}
+
+.priceHeaderLeft {
+  max-width: 560px;
+}
+
+.priceEyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.dark .priceEyebrow {
+  color: #666;
+}
+
+.priceBadge {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(124,58,237,0.1));
+  border: 1px solid rgba(124,58,237,0.2);
+  border-radius: 20px;
+  padding: 16px 20px;
+  text-align: right;
+}
+
+.priceBadgeAmount {
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  background: linear-gradient(135deg, #22c55e, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.priceBadgeCurrency {
+  font-size: 14px;
+  font-weight: 700;
+  color: #8888a0;
+  letter-spacing: 0.05em;
+}
+
+.priceBadgeNote {
+  font-size: 11px;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+.priceFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 28px;
 }
 
 .priceTop {
@@ -963,16 +1064,14 @@ h2 {
 }
 
 .priceCta {
-  margin-top: 28px;
+  min-width: 200px;
 }
 
 .stamp {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
   transform: rotate(12deg);
   filter: drop-shadow(0 4px 12px rgba(220, 38, 38, 0.4));
   pointer-events: none;
+  flex-shrink: 0;
 }
 
 .includesGrid {
