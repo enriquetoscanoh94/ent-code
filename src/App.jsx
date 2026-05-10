@@ -1075,23 +1075,22 @@ h2 {
 }
 
 .includesGrid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 10px;
   margin-top: 24px;
 }
 
 .includeItem {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  padding: 10px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
   border-left: 2px solid rgba(34, 197, 94, 0.5);
   background: rgba(255, 255, 255, 0.75);
   font-size: 13px;
   font-weight: 700;
-  white-space: nowrap;
 }
 
 .dark .includeItem {
