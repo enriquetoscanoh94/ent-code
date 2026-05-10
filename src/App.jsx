@@ -365,7 +365,7 @@ body {
 }
 
 .site.dark {
-  color: #ffffff;
+  color: #d8d8e8;
   background:
     radial-gradient(circle at top left, rgba(34, 197, 94, 0.12), transparent 32rem),
     radial-gradient(circle at top right, rgba(124, 58, 237, 0.16), transparent 34rem),
