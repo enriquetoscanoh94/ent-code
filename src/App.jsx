@@ -214,11 +214,6 @@ function App() {
         <p className="eyebrow">{t.eyebrow}</p>
         <h1>{t.headline}</h1>
         <p className="subtitle">{t.subtitle}</p>
-        <div className="heroButtons">
-          <a href="#contact" className="btn primary">{t.primary}</a>
-          <a href="#package" className="btn secondary">{t.secondary}</a>
-        </div>
-        <p className="badge">{t.badge}</p>
       </section>
 
       <section id="package" className="section">
