@@ -976,28 +976,29 @@ h2 {
 }
 
 .includesGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 24px;
 }
 
 .includeItem {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  padding: 14px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-left: 2px solid rgba(34, 197, 94, 0.5);
   background: rgba(255, 255, 255, 0.75);
   font-size: 13px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .dark .includeItem {
-  border-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
   border-left-color: rgba(34, 197, 94, 0.4);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .checkGreen {
