@@ -202,7 +202,6 @@ function App() {
           <button className="iconBtn" onClick={() => setDark(!dark)} aria-label="Cambiar tema">
             {dark ? "Claro" : "Oscuro"}
           </button>
-          <a href="#contact" className="navCta" onClick={closeMenu}>{t.cta}</a>
           <button className={`hamburger${menuOpen ? " active" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menú">
             <span /><span /><span />
           </button>
