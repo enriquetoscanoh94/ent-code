@@ -33,6 +33,7 @@ const copy = {
     packageTitle: "Tu página web por $249",
     packageSubtitle:
       "Una solución completa para negocios que necesitan verse profesionales, generar confianza y empezar rápido sin complicarse.",
+    stampFree: "GRATIS",
     priceLabel: "Pago único",
     includes: [
       "Sitio web completo",
@@ -94,6 +95,7 @@ const copy = {
     packageTitle: "Your website for $249",
     packageSubtitle:
       "A complete solution for businesses that need to look professional, build trust and launch quickly without complications.",
+    stampFree: "FREE",
     priceLabel: "One-time payment",
     includes: [
       "Complete website",
@@ -222,6 +224,16 @@ function App() {
 
       <section id="package" className="section">
         <div className="pricingCard">
+          <div className="stamp">
+            <svg viewBox="0 0 130 130" width="130" height="130">
+              <circle cx="65" cy="65" r="62" fill="#dc2626"/>
+              <circle cx="65" cy="65" r="54" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5"/>
+              <circle cx="65" cy="65" r="58" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1"/>
+              <text fill="white" fontFamily="inherit" fontWeight="900" fontSize="13" letterSpacing="3" textAnchor="middle" x="65" y="52">· INCLUIDO ·</text>
+              <text fill="white" fontFamily="inherit" fontWeight="900" fontSize="26" letterSpacing="-1" textAnchor="middle" x="65" y="72">LOGO</text>
+              <text fill="white" fontFamily="inherit" fontWeight="900" fontSize="20" letterSpacing="1" textAnchor="middle" x="65" y="94">{t.stampFree}</text>
+            </svg>
+          </div>
           <div className="priceTop">
             <div>
               <h2 className="priceTitle">{t.packageTitle}</h2>
@@ -852,6 +864,8 @@ h2 {
 /* ── PACKAGE ─────────────────────────────── */
 
 .pricingCard {
+  position: relative;
+  overflow: visible;
   padding: 48px;
   background: linear-gradient(135deg, rgba(255,255,255,0.97), rgba(236,253,245,0.97));
 }
@@ -912,6 +926,15 @@ h2 {
 
 .priceCta {
   margin-top: 28px;
+}
+
+.stamp {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  transform: rotate(12deg);
+  filter: drop-shadow(0 4px 12px rgba(220, 38, 38, 0.4));
+  pointer-events: none;
 }
 
 .includesGrid {
