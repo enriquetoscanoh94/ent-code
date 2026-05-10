@@ -30,7 +30,7 @@ const copy = {
       ["E-commerce", "Estructuras para vender productos, servicios o paquetes digitales de forma directa.", "🛒"],
       ["Dominio, hosting y QR", "Código QR personalizado, dominio, publicación y configuración inicial del sitio.", "🚀"],
     ],
-    packageTitle: "Paquete único",
+    packageTitle: "Tu página web por $249",
     packageSubtitle:
       "Una solución completa para negocios que necesitan verse profesionales, generar confianza y empezar rápido sin complicarse.",
     priceLabel: "Pago único",
@@ -91,7 +91,7 @@ const copy = {
       ["E-commerce", "Structures to sell products, services or digital packages directly.", "🛒"],
       ["Domain, hosting and QR", "Custom QR code, domain, publishing and initial website setup.", "🚀"],
     ],
-    packageTitle: "Single package",
+    packageTitle: "Your website for $249",
     packageSubtitle:
       "A complete solution for businesses that need to look professional, build trust and launch quickly without complications.",
     priceLabel: "One-time payment",
@@ -232,13 +232,11 @@ function App() {
               <p className="priceLabel">{t.priceLabel}</p>
               <h3>$249 <span>USD</span></h3>
             </div>
-            <a href="#contact" className="btn primary">{t.cta}</a>
           </div>
 
           <div className="includesGrid">
             {t.includes.map((item) => (
               <div key={item} className="includeItem">
-                <span className="checkGreen">✓</span>
                 {item}
               </div>
             ))}
@@ -331,7 +329,6 @@ function App() {
             <img src="/logo.png" alt="ENT-CODE logo" />
           </div>
           <p>{t.footer}</p>
-          <a href="#contact" className="btn primary">{t.cta}</a>
         </div>
         <div className="footerBottom">
           <p>© {new Date().getFullYear()} {t.copyright}</p>
