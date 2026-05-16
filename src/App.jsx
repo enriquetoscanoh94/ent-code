@@ -11,7 +11,7 @@ const copy = {
     lang: "EN",
     cta: "Empezar proyecto",
     eyebrow: "Agencia digital para negocios modernos",
-    headline: "Creamos presencia digital premium que convierte visitas en clientes.",
+    headline: "Creamos presencia digital premium que convierte visitas en <em>clientes</em>.",
     subtitle:
       "ENT-CODE construye sitios web, automatizaciones, branding e integraciones listas para lanzar tu negocio con una imagen profesional.",
     primary: "Quiero mi sitio por $249",
@@ -29,6 +29,31 @@ const copy = {
       ["Integraciones y APIs", "Conectamos formularios, plataformas, bases de datos y servicios externos.", "🔗"],
       ["E-commerce", "Estructuras para vender productos, servicios o paquetes digitales de forma directa.", "🛒"],
       ["Dominio, hosting y QR", "Código QR personalizado, dominio, publicación y configuración inicial del sitio.", "🚀"],
+    ],
+    plansTitle: "Tu sitio web profesional",
+    plansSubtitle: "Tres opciones para cada etapa de tu negocio. Todas incluyen dominio, hosting y logo.",
+    plans: [
+      {
+        name: "Conecta",
+        price: "$129",
+        tagline: "Empieza con una presencia profesional.",
+        features: ["Sitio web profesional", "Inglés y español", "Logo incluido", "WhatsApp, Facebook e Instagram", "Dominio y hosting incluidos"],
+        popular: false,
+      },
+      {
+        name: "Impulso Pro",
+        price: "$229",
+        tagline: "Haz que tu negocio se vea serio y confiable.",
+        features: ["Todo lo del plan Conecta", "Logo profesional", "Formulario de contacto", "Google Maps integrado", "Código QR personalizado"],
+        popular: true,
+      },
+      {
+        name: "Presencia Premium",
+        price: "$279",
+        tagline: "Posiciónate con autoridad en tu mercado.",
+        features: ["Todo lo del plan Impulso Pro", "Diseño premium", "SEO local básico", "Estudio de mercado y competencia", "Ideas para redes sociales", "6 revisiones incluidas"],
+        popular: false,
+      },
     ],
     packageTitle: "Tu página web por $249",
     packageSubtitle:
@@ -73,7 +98,7 @@ const copy = {
     lang: "ES",
     cta: "Start project",
     eyebrow: "Digital agency for modern businesses",
-    headline: "We build premium digital presence that turns visitors into clients.",
+    headline: "We build premium digital presence that turns visitors into <em>clients</em>.",
     subtitle:
       "ENT-CODE builds websites, automations, branding and integrations ready to launch your business with a professional image.",
     primary: "Get my site for $249",
@@ -91,6 +116,31 @@ const copy = {
       ["Integrations and APIs", "We connect forms, platforms, databases and external services.", "🔗"],
       ["E-commerce", "Structures to sell products, services or digital packages directly.", "🛒"],
       ["Domain, hosting and QR", "Custom QR code, domain, publishing and initial website setup.", "🚀"],
+    ],
+    plansTitle: "Your professional website",
+    plansSubtitle: "Three options for every stage of your business. All include domain, hosting and logo.",
+    plans: [
+      {
+        name: "Conecta",
+        price: "$129",
+        tagline: "Start with a professional online presence.",
+        features: ["Professional website", "English and Spanish", "Logo included", "WhatsApp, Facebook & Instagram", "Domain and hosting included"],
+        popular: false,
+      },
+      {
+        name: "Impulso Pro",
+        price: "$229",
+        tagline: "Make your business look serious and trustworthy.",
+        features: ["Everything in Conecta", "Professional logo", "Contact form", "Google Maps integration", "Custom QR code"],
+        popular: true,
+      },
+      {
+        name: "Presencia Premium",
+        price: "$279",
+        tagline: "Position yourself with authority in your market.",
+        features: ["Everything in Impulso Pro", "Premium design", "Basic local SEO", "Market & competitor research", "Social media content ideas", "6 revisions included"],
+        popular: false,
+      },
     ],
     packageTitle: "Your website for $249",
     packageSubtitle:
@@ -189,7 +239,7 @@ function App() {
 
         <div className={`navlinks${menuOpen ? " open" : ""}`}>
           {t.nav.map((label, i) => (
-            <a key={i} href={`#${["package","services","process","contact"][i]}`} onClick={closeMenu}>
+            <a key={i} href={`#${["plans","services","process","contact"][i]}`} onClick={closeMenu}>
               {label}
             </a>
           ))}
@@ -213,41 +263,38 @@ function App() {
       <section id="home" className="hero section">
         <div className="heroGlow" />
         <p className="eyebrow">{t.eyebrow}</p>
-        <h1 className="heroHeadline">{t.headline}</h1>
+        <h1 className="heroHeadline" dangerouslySetInnerHTML={{ __html: t.headline }} />
         <p className="subtitle">{t.subtitle}</p>
       </section>
 
-      <section id="package" className="section">
-        <div className="pricingCard">
-          <div className="priceAccentBar" />
-          <div className="priceHeader">
-            <div className="priceHeaderLeft">
-              <p className="priceEyebrow">{t.packageSubtitle}</p>
-              <h2 className="priceTitle">{t.packageTitle}</h2>
+      <section id="plans" className="section">
+        <div className="sectionHead">
+          <h2>{t.plansTitle}</h2>
+          <p>{t.plansSubtitle}</p>
+        </div>
+        <div className="plansGrid">
+          {t.plans.map((plan) => (
+            <div key={plan.name} className={`planCard${plan.popular ? " planCard--popular" : ""}`}>
+              {plan.popular && <div className="planAccentBar" />}
+              <div className="planCardInner">
+                {plan.popular && <span className="planBadge">{lang === "es" ? "Más popular" : "Most popular"}</span>}
+                <p className="planName">{plan.name}</p>
+                <p className="planPrice">{plan.price}</p>
+                <p className="planTagline">{plan.tagline}</p>
+                <ul className="planFeatures">
+                  {plan.features.map((f) => (
+                    <li key={f}>
+                      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="6.5" fill="#22c55e" fillOpacity="0.15"/><path d="M3.5 6.5l2 2 4-4" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#contact" className={`btn planCta ${plan.popular ? "primary" : "ghost"}`}>
+                  {lang === "es" ? "Empezar" : "Get started"}
+                </a>
+              </div>
             </div>
-            <div className="priceBadge">
-              <span className="priceBadgeAmount">$249</span>
-              <span className="priceBadgeCurrency">USD</span>
-              <span className="priceBadgeNote">{lang === "es" ? "pago único" : "one-time"}</span>
-            </div>
-          </div>
-          <div className="includesGrid">
-            {t.includes.map((item) => (
-              <div key={item} className="includeItem">{item}</div>
-            ))}
-          </div>
-          <div className="priceFooter">
-            <a href="#contact" className="btn primary priceCta">{t.cta}</a>
-            <div className="stamp">
-              <svg viewBox="0 0 130 130" width="110" height="110">
-                <circle cx="65" cy="65" r="62" fill="#dc2626"/>
-                <circle cx="65" cy="65" r="54" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5"/>
-                <text fill="white" fontFamily="inherit" fontWeight="900" fontSize="13" letterSpacing="3" textAnchor="middle" x="65" y="52">· INCLUIDO ·</text>
-                <text fill="white" fontFamily="inherit" fontWeight="900" fontSize="26" letterSpacing="-1" textAnchor="middle" x="65" y="72">LOGO</text>
-                <text fill="white" fontFamily="inherit" fontWeight="900" fontSize="20" letterSpacing="1" textAnchor="middle" x="65" y="94">{t.stampFree}</text>
-              </svg>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -628,17 +675,19 @@ a {
 }
 
 .heroHeadline {
-  background: linear-gradient(135deg, #ffffff 30%, #a78bfa 70%, #34d399 100%);
+  color: #f0f0f5;
+}
+
+.heroHeadline em {
+  font-style: normal;
+  background: linear-gradient(120deg, #22c55e 0%, #4ade80 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .site:not(.dark) .heroHeadline {
-  background: linear-gradient(135deg, #08080a 30%, #7c3aed 70%, #16a34a 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #08080a;
 }
 
 .eyebrow {
@@ -893,6 +942,199 @@ h2 {
 .card p {
   font-size: 14px;
   line-height: 1.65;
+}
+
+/* ── PLANS GRID ──────────────────────────── */
+
+.plansGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.planCard {
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dark .planCard {
+  border-color: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+}
+
+.planCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.dark .planCard:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.planCard--popular {
+  border-color: rgba(34, 197, 94, 0.25);
+  background: #ffffff;
+  box-shadow: 0 8px 40px rgba(34, 197, 94, 0.08), 0 2px 16px rgba(0, 0, 0, 0.06);
+}
+
+.dark .planCard--popular {
+  border-color: rgba(34, 197, 94, 0.2);
+  background: rgba(34, 197, 94, 0.04);
+  box-shadow: 0 8px 48px rgba(34, 197, 94, 0.08), 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.planCard--popular:hover {
+  box-shadow: 0 20px 50px rgba(34, 197, 94, 0.12), 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dark .planCard--popular:hover {
+  box-shadow: 0 20px 50px rgba(34, 197, 94, 0.12), 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.planAccentBar {
+  height: 3px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  width: 100%;
+}
+
+.planCardInner {
+  padding: 28px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.planBadge {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #16a34a;
+  width: fit-content;
+}
+
+.dark .planBadge {
+  background: rgba(34, 197, 94, 0.08);
+  border-color: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.planName {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.dark .planName {
+  color: #555;
+}
+
+.planPrice {
+  margin: 0 0 10px;
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: #08080a;
+}
+
+.dark .planPrice {
+  color: #f0f0f5;
+}
+
+.planTagline {
+  margin: 0 0 22px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #6e6e85;
+}
+
+.dark .planTagline {
+  color: #5a5a72;
+}
+
+.planFeatures {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  padding-top: 20px;
+  flex: 1;
+}
+
+.dark .planFeatures {
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+.planFeatures li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #3a3a4a;
+  line-height: 1.4;
+}
+
+.dark .planFeatures li {
+  color: #b0b0c4;
+}
+
+.planCta {
+  width: 100%;
+  font-size: 14px;
+  min-height: 46px;
+}
+
+.ghost {
+  color: #3a3a4a;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: none;
+}
+
+.ghost:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+.dark .ghost {
+  color: #c0c0d4;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 860px) {
+  .plansGrid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
 }
 
 /* ── PACKAGE ─────────────────────────────── */
