@@ -14,7 +14,7 @@ const copy = {
     headline: "Creamos presencia digital premium que convierte visitas en <em>clientes</em>.",
     subtitle:
       "ENT-CODE construye sitios web, automatizaciones, branding e integraciones listas para lanzar tu negocio con una imagen profesional.",
-    primary: "Quiero mi sitio por $249",
+    primary: "Quiero mi sitio web",
     secondary: "Ver paquete",
     badge: "Pago único · Dominio incluido · Deploy listo",
     servicesTitle: "Servicios digitales para lanzar, automatizar y vender mejor",
@@ -55,7 +55,7 @@ const copy = {
         popular: false,
       },
     ],
-    packageTitle: "Tu página web por $249",
+    packageTitle: "Tu página web profesional",
     packageSubtitle:
       "Una solución completa para negocios que necesitan verse profesionales, generar confianza y empezar rápido sin complicarse.",
     stampFree: "GRATIS",
@@ -101,7 +101,7 @@ const copy = {
     headline: "We build premium digital presence that turns visitors into <em>clients</em>.",
     subtitle:
       "ENT-CODE builds websites, automations, branding and integrations ready to launch your business with a professional image.",
-    primary: "Get my site for $249",
+    primary: "Get my website",
     secondary: "View package",
     badge: "One-time payment · Domain included · Deploy ready",
     servicesTitle: "Digital services to launch, automate and sell better",
@@ -142,7 +142,7 @@ const copy = {
         popular: false,
       },
     ],
-    packageTitle: "Your website for $249",
+    packageTitle: "Your professional website",
     packageSubtitle:
       "A complete solution for businesses that need to look professional, build trust and launch quickly without complications.",
     stampFree: "FREE",
