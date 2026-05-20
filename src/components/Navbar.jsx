@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useScrolled } from "../hooks/useScrolled";
 
-const NAV_ANCHORS = ["plans", "services", "process", "contact"];
+function scrollToSection(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+}
 
 export default function Navbar({ t, dark, onLangToggle, onDarkToggle }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,16 +17,26 @@ export default function Navbar({ t, dark, onLangToggle, onDarkToggle }) {
   return (
     <>
       <nav className={`navbar${scrolled ? " scrolled" : ""}`}>
-        <a href="#home" className="brand" onClick={closeMenu}>
+        <Link to="/" className="brand" onClick={closeMenu}>
           <img src="/logo.png" alt="ENT-CODE logo" />
-        </a>
+        </Link>
 
         <div className={`navlinks${menuOpen ? " open" : ""}`}>
-          {t.nav.map((label, i) => (
-            <a key={label} href={`#${NAV_ANCHORS[i]}`} onClick={closeMenu}>
-              {label}
-            </a>
-          ))}
+          {t.nav.map((item) =>
+            item.route ? (
+              <Link key={item.route} to={item.route} onClick={closeMenu}>
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => { e.preventDefault(); scrollToSection(item.id); closeMenu(); }}
+              >
+                {item.label}
+              </a>
+            )
+          )}
         </div>
 
         <div className="actions">

@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { PLANS_META } from "../data/plans";
+
 const CheckIcon = () => (
   <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
     <circle cx="6.5" cy="6.5" r="6.5" fill="#22c55e" fillOpacity="0.15" />
@@ -5,10 +8,7 @@ const CheckIcon = () => (
   </svg>
 );
 
-export default function Plans({ t, lang }) {
-  const popularLabel = lang === "es" ? "Más popular" : "Most popular";
-  const ctaLabel = lang === "es" ? "Empezar" : "Get started";
-
+export default function Plans({ t }) {
   return (
     <section id="plans" className="section">
       <div className="sectionHead">
@@ -16,28 +16,31 @@ export default function Plans({ t, lang }) {
         <p>{t.plansSubtitle}</p>
       </div>
       <div className="plansGrid">
-        {t.plans.map((plan) => (
-          <div key={plan.name} className={`planCard${plan.popular ? " planCard--popular" : ""}`}>
-            {plan.popular && <div className="planAccentBar" />}
-            <div className="planCardInner">
-              {plan.popular && <span className="planBadge">{popularLabel}</span>}
-              <p className="planName">{plan.name}</p>
-              <p className="planPrice">{plan.price}</p>
-              <p className="planTagline">{plan.tagline}</p>
-              <ul className="planFeatures">
-                {plan.features.map((f) => (
-                  <li key={f}>
-                    <CheckIcon />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <a href="#contact" className={`btn planCta ${plan.popular ? "primary" : "ghost"}`}>
-                {ctaLabel}
-              </a>
+        {PLANS_META.map((meta, i) => {
+          const plan = t.plans[i];
+          return (
+            <div key={meta.id} className={`planCard${meta.popular ? " planCard--popular" : ""}`}>
+              {meta.popular && <div className="planAccentBar" />}
+              <div className="planCardInner">
+                {meta.popular && <span className="planBadge">{t.popularLabel}</span>}
+                <p className="planName">{meta.name}</p>
+                <p className="planPrice">{meta.price}</p>
+                <p className="planTagline">{plan.tagline}</p>
+                <ul className="planFeatures">
+                  {plan.features.map((f) => (
+                    <li key={f}>
+                      <CheckIcon />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/contact" className={`btn planCta ${meta.popular ? "primary" : "ghost"}`}>
+                  {t.ctaLabel}
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
