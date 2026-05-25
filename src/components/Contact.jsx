@@ -7,6 +7,10 @@ const EJ_SERVICE  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EJ_TEMPLATE = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EJ_KEY      = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+if (!EJ_SERVICE || !EJ_TEMPLATE || !EJ_KEY) {
+  console.warn("EmailJS: faltan variables de entorno (VITE_EMAILJS_*)");
+}
+
 const EMPTY_FIELDS = { name: "", email: "", phone: "", business: "", message: "", honeypot: "" };
 
 export default function Contact({ t }) {

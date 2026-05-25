@@ -1,20 +1,17 @@
-import { Link } from "react-router-dom";
+import { scrollToSection } from "../utils/scroll";
 
 function FooterLink({ label, href }) {
-  if (href.startsWith("/")) {
-    return <Link to={href}>{label}</Link>;
+  if (href.startsWith("#")) {
+    return (
+      <a
+        href={href}
+        onClick={(e) => { e.preventDefault(); scrollToSection(href.slice(1)); }}
+      >
+        {label}
+      </a>
+    );
   }
-  return (
-    <a
-      href={href}
-      onClick={(e) => {
-        e.preventDefault();
-        document.getElementById(href.slice(1))?.scrollIntoView({ behavior: "smooth" });
-      }}
-    >
-      {label}
-    </a>
-  );
+  return <a href={href}>{label}</a>;
 }
 
 export default function Footer({ t }) {
@@ -30,7 +27,7 @@ export default function Footer({ t }) {
         <p>© {new Date().getFullYear()} {t.copyright}</p>
         <div className="footerLinks">
           {t.footerLinks.map(({ label, href }) => (
-            <FooterLink key={href} label={label} href={href} />
+            <FooterLink key={label} label={label} href={href} />
           ))}
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export function useScrolled(threshold = 20) {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(() => window.scrollY > threshold);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > threshold);

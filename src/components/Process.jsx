@@ -6,11 +6,11 @@ export default function Process({ t }) {
         <p>{t.processSubtitle}</p>
       </div>
       <div className="grid processGrid">
-        {t.steps.map(([title, desc], i) => (
+        {t.steps.map(({ title, description }, i) => (
           <article className="card" key={title}>
             <span className="stepNumber">{i + 1}</span>
             <h3>{title}</h3>
-            <p>{desc}</p>
+            <p>{description}</p>
           </article>
         ))}
       </div>

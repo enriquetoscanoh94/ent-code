@@ -1,10 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useScrolled } from "../hooks/useScrolled";
-
-function scrollToSection(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-}
+import { scrollToSection } from "../utils/scroll";
 
 export default function Navbar({ t, dark, onLangToggle, onDarkToggle }) {
   const [menuOpen, setMenuOpen] = useState(false);

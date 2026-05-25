@@ -1,12 +1,6 @@
-import { Link } from "react-router-dom";
+import { CheckIcon } from "./icons";
 import { PLANS_META } from "../data/plans";
-
-const CheckIcon = () => (
-  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
-    <circle cx="6.5" cy="6.5" r="6.5" fill="#22c55e" fillOpacity="0.15" />
-    <path d="M3.5 6.5l2 2 4-4" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+import { scrollToSection } from "../utils/scroll";
 
 export default function Plans({ t }) {
   return (
@@ -34,9 +28,12 @@ export default function Plans({ t }) {
                     </li>
                   ))}
                 </ul>
-                <Link to="/contact" className={`btn planCta ${meta.popular ? "primary" : "ghost"}`}>
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  className={`btn planCta ${meta.popular ? "primary" : "ghost"}`}
+                >
                   {t.ctaLabel}
-                </Link>
+                </button>
               </div>
             </div>
           );

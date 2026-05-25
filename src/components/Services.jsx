@@ -6,11 +6,11 @@ export default function Services({ t }) {
         <p>{t.servicesSubtitle}</p>
       </div>
       <div className="grid servicesGrid">
-        {t.services.map(([title, desc, emoji]) => (
+        {t.services.map(({ title, description, emoji }) => (
           <article className="card" key={title}>
             <span className="serviceEmoji" aria-hidden="true">{emoji}</span>
             <h3>{title}</h3>
-            <p>{desc}</p>
+            <p>{description}</p>
           </article>
         ))}
       </div>
