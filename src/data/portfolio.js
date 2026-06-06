@@ -3,7 +3,13 @@ export const PORTFOLIO = [
     id: "sonar",
     gradient: "linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #3b0764 100%)",
     tags: ["React", "Vite", "Responsive"],
-    link: "sonarproaudio.com",
+    link: "www.sonarproaudio.com",
+  },
+  {
+    id: "roma",
+    gradient: "linear-gradient(135deg, #1a0505 0%, #3b0000 50%, #7f1d1d 100%)",
+    tags: ["React", "Vite", "Music Label"],
+    link: "romarecords.llc",
   },
   {
     id: "calderoni",

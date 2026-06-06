@@ -76,6 +76,12 @@ const copy = {
         linkLabel: "sonarproaudio.com",
       },
       {
+        name: "Roma Records",
+        category: "Sello discográfico / Música",
+        description: "Sitio web para sello discográfico independiente. Presenta artistas, lanzamientos y contenido de la disquera con diseño oscuro y elegante.",
+        linkLabel: "romarecords.llc",
+      },
+      {
         name: "Calderoni Gardens",
         category: "Landscaping / South Florida",
         description: "Sitio web para empresa de paisajismo con galería de proyectos, formulario de cotización y posicionamiento en Google Maps.",
@@ -213,6 +219,12 @@ const copy = {
         category: "Audio store / E-commerce",
         description: "Website for a professional audio equipment distributor in South Florida. Product catalog, contact form and local positioning.",
         linkLabel: "sonarproaudio.com",
+      },
+      {
+        name: "Roma Records",
+        category: "Record label / Music",
+        description: "Website for an independent record label. Showcases artists, releases and label content with a dark, elegant design.",
+        linkLabel: "romarecords.llc",
       },
       {
         name: "Calderoni Gardens",
