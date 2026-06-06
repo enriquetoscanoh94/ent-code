@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import copy from "../data/copy";
+import { useApp } from "../context/AppContext";
 import { PhoneIcon, SmsIcon, WhatsappIcon, FacebookIcon, GlobeIcon, InstagramIcon, EmailIcon, SaveContactIcon } from "../components/icons";
 import { TEL_HREF, SMS_HREF, EMAIL_HREF, WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL, WEBSITE_URL, PHONE_DISPLAY, PHONE, EMAIL } from "../data/contact";
 
@@ -12,8 +12,8 @@ function downloadVCard() {
     "ORG:ENT-CODE",
     `TEL;TYPE=CELL:${PHONE}`,
     `EMAIL:${EMAIL}`,
-    "URL:https://ent-code.com",
-    "X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/tski337/",
+    `URL:${WEBSITE_URL}`,
+    `X-SOCIALPROFILE;TYPE=instagram:${INSTAGRAM_URL}`,
     "END:VCARD",
   ].join("\r\n");
 
@@ -27,7 +27,7 @@ function downloadVCard() {
 }
 
 export default function ContactPage() {
-  const [lang, setLang] = useState("es");
+  const { lang, toggleLang } = useApp();
   const t = copy[lang];
 
   const buttons = [
@@ -46,12 +46,13 @@ export default function ContactPage() {
         <Link to="/">
           <img src="/logo.png" alt="ENT-CODE" />
         </Link>
-        <p>Digital Agency</p>
+        <p>{t.agencyTagline}</p>
       </div>
 
       <button
         className="iconBtn nfcLangBtn"
-        onClick={() => setLang(lang === "es" ? "en" : "es")}
+        onClick={toggleLang}
+        aria-label="Cambiar idioma"
       >
         {t.lang}
       </button>

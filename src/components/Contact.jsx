@@ -94,14 +94,29 @@ export default function Contact({ t }) {
               autoComplete="off"
             />
             <div className="formGrid">
-              <input placeholder={t.form.name}     required value={fields.name}     onChange={setField("name")} />
-              <input placeholder={t.form.email}    type="email" required value={fields.email}    onChange={setField("email")} />
-              <input placeholder={t.form.phone}    value={fields.phone}    onChange={setField("phone")} />
-              <input placeholder={t.form.business} value={fields.business} onChange={setField("business")} />
+              <div className="fieldWrap">
+                <label htmlFor="f-name" className="srOnly">{t.form.name}</label>
+                <input id="f-name" placeholder={t.form.name} required value={fields.name} onChange={setField("name")} />
+              </div>
+              <div className="fieldWrap">
+                <label htmlFor="f-email" className="srOnly">{t.form.email}</label>
+                <input id="f-email" type="email" placeholder={t.form.email} required value={fields.email} onChange={setField("email")} />
+              </div>
+              <div className="fieldWrap">
+                <label htmlFor="f-phone" className="srOnly">{t.form.phone}</label>
+                <input id="f-phone" placeholder={t.form.phone} value={fields.phone} onChange={setField("phone")} />
+              </div>
+              <div className="fieldWrap">
+                <label htmlFor="f-business" className="srOnly">{t.form.business}</label>
+                <input id="f-business" placeholder={t.form.business} value={fields.business} onChange={setField("business")} />
+              </div>
             </div>
-            <textarea placeholder={t.form.message} value={fields.message} onChange={setField("message")} />
+            <div className="fieldWrap">
+              <label htmlFor="f-message" className="srOnly">{t.form.message}</label>
+              <textarea id="f-message" placeholder={t.form.message} value={fields.message} onChange={setField("message")} />
+            </div>
             <button type="submit" className="btn primary full" disabled={status === "sending"}>
-              {status === "sending" ? "Enviando..." : t.submit}
+              {status === "sending" ? t.sending : t.submit}
             </button>
           </>
         )}
