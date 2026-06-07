@@ -12,14 +12,7 @@ export default function Portfolio({ t }) {
           const project = t.portfolio[i];
           return (
             <article key={meta.id} className="portfolioCard">
-              <div className="portfolioPreview" style={{ background: meta.gradient }}>
-                <div className="portfolioPreviewDots" />
-                <div className="portfolioPreviewBar">
-                  <div className="portfolioPreviewDot" />
-                  <div className="portfolioPreviewDot" />
-                  <div className="portfolioPreviewDot" />
-                </div>
-              </div>
+              <div className="portfolioAccent" style={{ background: meta.gradient }} />
               <div className="portfolioBody">
                 <span className="portfolioCategory">{project.category}</span>
                 <h3>{project.name}</h3>

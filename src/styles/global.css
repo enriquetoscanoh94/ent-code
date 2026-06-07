@@ -904,10 +904,65 @@ textarea {
   .servicesGrid,
   .processGrid,
   .formGrid,
-  .whyGrid,
-  .portfolioGrid {
+  .whyGrid {
     grid-template-columns: 1fr;
   }
+
+  .portfolioGrid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px;
+    padding-bottom: 12px;
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    scrollbar-width: none;
+  }
+
+  .portfolioGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolioCard {
+    flex: 0 0 270px;
+    scroll-snap-align: start;
+  }
+
+  .portfolioBody {
+    padding: 16px;
+  }
+
+  .portfolioCard h3 {
+    font-size: 16px;
+    margin: 6px 0 6px;
+  }
+
+  .portfolioCategory {
+    font-size: 10px;
+  }
+
+  .portfolioCard p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+
+  .portfolioTag {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+
+  .portfolioTags {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
 
   .contactSection {
     gap: 28px;
@@ -1174,6 +1229,12 @@ textarea {
 
 /* ── PORTFOLIO ───────────────────────────── */
 
+.portfolioAccent {
+  height: 5px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
 .portfolioGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1203,39 +1264,6 @@ textarea {
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
 }
 
-.portfolioPreview {
-  height: 170px;
-  position: relative;
-  overflow: hidden;
-}
-
-.portfolioPreviewDots {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
-  background-size: 22px 22px;
-}
-
-.portfolioPreviewBar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 38px;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  padding: 0 16px;
-  gap: 6px;
-}
-
-.portfolioPreviewDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
-}
 
 .portfolioBody {
   padding: 24px;
