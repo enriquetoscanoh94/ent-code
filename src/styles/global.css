@@ -60,9 +60,7 @@ a {
   gap: 24px;
   padding: 0 40px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: #ffffff;
   transition: box-shadow 0.3s ease, background 0.3s ease;
 }
 
@@ -72,7 +70,7 @@ a {
 
 .dark .navbar {
   border-bottom-color: rgba(255, 255, 255, 0.1);
-  background: rgba(7, 7, 10, 0.8);
+  background: #07070a;
 }
 
 .dark .navbar.scrolled {
@@ -1096,7 +1094,7 @@ textarea {
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.06em;
-  background: linear-gradient(120deg, #16a34a 0%, #22c55e 60%, #4ade80 100%);
+  background: linear-gradient(120deg, #94a3b8 0%, #e2e8f0 60%, #cbd5e1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
