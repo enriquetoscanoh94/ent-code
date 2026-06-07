@@ -94,12 +94,6 @@ const copy = {
         linkLabel: null,
       },
       {
-        name: "Bot WhatsApp Restaurantes",
-        category: "Automatización / WhatsApp",
-        description: "Bot inteligente para restaurantes. Responde menú, toma pedidos, confirma reservas y envía recordatorios automáticos sin intervención humana.",
-        linkLabel: null,
-      },
-      {
         name: "Bot WhatsApp Citas",
         category: "Automatización / WhatsApp",
         description: "Sistema de agendamiento automático por WhatsApp para salones, clínicas y servicios. Confirma, reagenda y recuerda citas 24/7.",
@@ -236,12 +230,6 @@ const copy = {
         name: "OpenClaw VEGA",
         category: "Sales bot / AI",
         description: "Messenger bot with artificial intelligence to automate 24/7 responses and sales, integrated with OpenAI and Meta API.",
-        linkLabel: null,
-      },
-      {
-        name: "WhatsApp Restaurant Bot",
-        category: "Automation / WhatsApp",
-        description: "Intelligent bot for restaurants. Answers menu questions, takes orders, confirms reservations and sends automatic reminders without human intervention.",
         linkLabel: null,
       },
       {

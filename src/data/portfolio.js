@@ -24,12 +24,6 @@ export const PORTFOLIO = [
     link: null,
   },
   {
-    id: "wa-restaurant",
-    gradient: "linear-gradient(135deg, #052e16 0%, #064e3b 55%, #047857 100%)",
-    tags: ["WhatsApp API", "Node.js", "OpenAI"],
-    link: null,
-  },
-  {
     id: "wa-agenda",
     gradient: "linear-gradient(135deg, #082f49 0%, #0c4a6e 55%, #075985 100%)",
     tags: ["WhatsApp API", "Calendly", "Webhooks"],
