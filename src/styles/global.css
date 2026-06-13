@@ -1008,6 +1008,30 @@ textarea {
     gap: 12px;
     padding: 16px;
   }
+
+  .portfolioListCard {
+    max-width: 100%;
+    padding: 4px;
+    border-radius: 18px;
+  }
+
+  .portfolioListLink {
+    padding: 14px 12px;
+    gap: 12px;
+  }
+
+  .portfolioListAccent {
+    width: 4px;
+    height: 38px;
+  }
+
+  .portfolioListBody h3 {
+    font-size: 15px;
+  }
+
+  .portfolioListArrow {
+    font-size: 17px;
+  }
 }
 
 /* ── SERVICE ICON ────────────────────────── */
@@ -1335,6 +1359,88 @@ textarea {
 
 .portfolioLink:hover {
   gap: 8px;
+}
+
+.portfolioHeart {
+  color: #ef4444;
+  display: inline-block;
+}
+
+.portfolioListCard {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 8px;
+}
+
+.portfolioList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.portfolioListItem {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.portfolioListItem:last-child {
+  border-bottom: none;
+}
+
+.dark .portfolioListItem {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+.portfolioListLink {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s ease;
+}
+
+.portfolioListLink:hover {
+  background: rgba(34, 197, 94, 0.06);
+}
+
+.portfolioListAccent {
+  width: 6px;
+  height: 44px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.portfolioListBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.portfolioListBody h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 2px 0 0;
+  letter-spacing: -0.02em;
+}
+
+.portfolioListArrow {
+  font-size: 20px;
+  font-weight: 700;
+  color: #22c55e;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.portfolioListLink:hover .portfolioListArrow {
+  transform: translateX(4px);
+}
+
+.portfolioListLinkDisabled {
+  cursor: default;
+}
+
+.portfolioListLinkDisabled:hover {
+  background: transparent;
 }
 
 /* ── NFC CONTACT PAGE ────────────────────── */

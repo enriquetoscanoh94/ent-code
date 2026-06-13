@@ -18,6 +18,18 @@ export const PORTFOLIO = [
     link: "calderoniservice.com",
   },
   {
+    id: "carwash",
+    gradient: "linear-gradient(135deg, #0c0a09 0%, #1c1917 50%, #292524 100%)",
+    tags: ["React", "Vite", "Responsive"],
+    link: "carwashdetailgo.com",
+  },
+  {
+    id: "gallardos",
+    gradient: "linear-gradient(135deg, #082f49 0%, #0369a1 50%, #0ea5e9 100%)",
+    tags: ["HTML", "CSS", "GitHub Pages"],
+    link: "gallardoshousecleaning.com",
+  },
+  {
     id: "vega",
     gradient: "linear-gradient(135deg, #0c1a3a 0%, #1e3a5f 50%, #1e40af 100%)",
     tags: ["Node.js", "OpenAI", "Meta API"],

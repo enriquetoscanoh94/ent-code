@@ -4,38 +4,48 @@ export default function Portfolio({ t }) {
   return (
     <section id="portfolio" className="section">
       <div className="sectionHead">
-        <h2>{t.portfolioTitle}</h2>
+        <h2>
+          {t.portfolioTitle} <span className="portfolioHeart">♥</span>
+        </h2>
         <p>{t.portfolioSubtitle}</p>
       </div>
-      <div className="portfolioGrid">
-        {PORTFOLIO.map((meta, i) => {
-          const project = t.portfolio[i];
-          return (
-            <article key={meta.id} className="portfolioCard">
-              <div className="portfolioAccent" style={{ background: meta.gradient }} />
-              <div className="portfolioBody">
-                <span className="portfolioCategory">{project.category}</span>
-                <h3>{project.name}</h3>
-                <p>{project.description}</p>
-                <div className="portfolioTags">
-                  {meta.tags.map((tag) => (
-                    <span key={tag} className="portfolioTag">{tag}</span>
-                  ))}
+      <div className="portfolioCard portfolioListCard">
+        <ul className="portfolioList">
+          {PORTFOLIO.map((meta, i) => {
+            const project = t.portfolio[i];
+            const inner = (
+              <>
+                <span
+                  className="portfolioListAccent"
+                  style={{ background: meta.gradient }}
+                />
+                <div className="portfolioListBody">
+                  <span className="portfolioCategory">{project.category}</span>
+                  <h3>{project.name}</h3>
                 </div>
-                {meta.link && (
+                {meta.link && <span className="portfolioListArrow">→</span>}
+              </>
+            );
+            return (
+              <li key={meta.id} className="portfolioListItem">
+                {meta.link ? (
                   <a
                     href={`https://${meta.link}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="portfolioLink"
+                    className="portfolioListLink"
                   >
-                    {project.linkLabel} →
+                    {inner}
                   </a>
+                ) : (
+                  <div className="portfolioListLink portfolioListLinkDisabled">
+                    {inner}
+                  </div>
                 )}
-              </div>
-            </article>
-          );
-        })}
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </section>
   );

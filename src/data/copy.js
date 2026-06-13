@@ -65,7 +65,7 @@ const copy = {
       { title: "Diseño y desarrollo", description: "Construimos el sitio, identidad, formulario, responsive móvil y configuración inicial." },
       { title: "Entrega",             description: "Publicamos, entregamos enlaces, dominio, QR y dejamos el proyecto listo para compartir." },
     ],
-    portfolioTitle: "Proyectos recientes",
+    portfolioTitle: "Nuestros clientes favoritos",
     portfolioSubtitle:
       "Sitios y herramientas construidas para negocios reales con resultados medibles.",
     portfolio: [
@@ -86,6 +86,18 @@ const copy = {
         category: "Landscaping / South Florida",
         description: "Sitio web para empresa de paisajismo con galería de proyectos, formulario de cotización y posicionamiento en Google Maps.",
         linkLabel: "calderonisgarden.com",
+      },
+      {
+        name: "Carwash Detail Go",
+        category: "Auto detailing / Servicios",
+        description: "Sitio web para empresa de lavado y detallado de autos a domicilio. Presentación de servicios, paquetes y formulario de reserva.",
+        linkLabel: "carwashdetailgo.com",
+      },
+      {
+        name: "Gallardo's House Cleaning",
+        category: "Limpieza de casas / Servicios",
+        description: "Sitio web para empresa de limpieza residencial y comercial. Servicios, área de cobertura y formulario de cotización rápida.",
+        linkLabel: "gallardoshousecleaning.com",
       },
       {
         name: "OpenClaw VEGA",
@@ -204,7 +216,7 @@ const copy = {
       { title: "Design and development", description: "We build the site, identity, form, mobile responsive version and initial setup." },
       { title: "Delivery",               description: "We publish, deliver links, domain, QR and leave the project ready to share." },
     ],
-    portfolioTitle: "Recent projects",
+    portfolioTitle: "Our favorite clients",
     portfolioSubtitle:
       "Sites and tools built for real businesses with measurable results.",
     portfolio: [
@@ -225,6 +237,18 @@ const copy = {
         category: "Landscaping / South Florida",
         description: "Website for a landscaping company with project gallery, quote form and Google Maps positioning.",
         linkLabel: "calderonisgarden.com",
+      },
+      {
+        name: "Carwash Detail Go",
+        category: "Auto detailing / Services",
+        description: "Website for a mobile car wash and detailing company. Service presentation, packages and booking form.",
+        linkLabel: "carwashdetailgo.com",
+      },
+      {
+        name: "Gallardo's House Cleaning",
+        category: "House cleaning / Services",
+        description: "Website for a residential and commercial cleaning company. Services, coverage area and quick quote form.",
+        linkLabel: "gallardoshousecleaning.com",
       },
       {
         name: "OpenClaw VEGA",
