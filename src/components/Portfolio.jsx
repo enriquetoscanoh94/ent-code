@@ -5,7 +5,12 @@ export default function Portfolio({ t }) {
     <section id="portfolio" className="section">
       <div className="sectionHead">
         <h2>
-          {t.portfolioTitle} <span className="portfolioHeart">♥</span>
+          {t.portfolioTitle}{" "}
+          <span className="portfolioHearts" aria-hidden="true">
+            <span className="portfolioHeart">♥</span>
+            <span className="portfolioHeart">♥</span>
+            <span className="portfolioHeart">♥</span>
+          </span>
         </h2>
         <p>{t.portfolioSubtitle}</p>
       </div>

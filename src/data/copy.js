@@ -94,6 +94,12 @@ const copy = {
         linkLabel: "carwashdetailgo.com",
       },
       {
+        name: "The Penguin Auto Mobile Detailing",
+        category: "Auto detailing móvil / Georgia, USA",
+        description: "Sitio web para empresa de detallado móvil en Georgia. Paquetes de servicio, galería y posicionamiento local con dominio propio.",
+        linkLabel: "thepenguincardetailing.com",
+      },
+      {
         name: "Gallardo's House Cleaning",
         category: "Limpieza de casas / Servicios",
         description: "Sitio web para empresa de limpieza residencial y comercial. Servicios, área de cobertura y formulario de cotización rápida.",
@@ -243,6 +249,12 @@ const copy = {
         category: "Auto detailing / Services",
         description: "Website for a mobile car wash and detailing company. Service presentation, packages and booking form.",
         linkLabel: "carwashdetailgo.com",
+      },
+      {
+        name: "The Penguin Auto Mobile Detailing",
+        category: "Mobile auto detailing / Georgia, USA",
+        description: "Website for a mobile detailing company in Georgia. Service packages, gallery and local positioning with custom domain.",
+        linkLabel: "thepenguincardetailing.com",
       },
       {
         name: "Gallardo's House Cleaning",

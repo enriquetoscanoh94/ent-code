@@ -24,6 +24,12 @@ export const PORTFOLIO = [
     link: "carwahsdetailgo.com",
   },
   {
+    id: "penguin",
+    gradient: "linear-gradient(135deg, #18181b 0%, #450a0a 50%, #dc2626 100%)",
+    tags: ["React", "Vite", "Custom Domain"],
+    link: "thepenguincardetailing.com",
+  },
+  {
     id: "gallardos",
     gradient: "linear-gradient(135deg, #082f49 0%, #0369a1 50%, #0ea5e9 100%)",
     tags: ["HTML", "CSS", "GitHub Pages"],
