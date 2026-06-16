@@ -21,7 +21,7 @@ export const PORTFOLIO = [
     id: "carwash",
     gradient: "linear-gradient(135deg, #0c0a09 0%, #1c1917 50%, #292524 100%)",
     tags: ["React", "Vite", "Responsive"],
-    link: "carwashdetailgo.com",
+    link: "carwahsdetailgo.com",
   },
   {
     id: "gallardos",
