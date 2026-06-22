@@ -1,5 +1,11 @@
 export const PORTFOLIO = [
   {
+    id: "vision13",
+    gradient: "linear-gradient(135deg, #022c22 0%, #064e3b 50%, #047857 100%)",
+    tags: ["Next.js", "Supabase", "Stripe"],
+    link: "vision-13.com",
+  },
+  {
     id: "sonar",
     gradient: "linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #3b0764 100%)",
     tags: ["React", "Vite", "Responsive"],

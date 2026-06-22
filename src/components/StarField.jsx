@@ -18,15 +18,21 @@ export default function StarField({ dark }) {
     let nextShootMs = (1.5 + Math.random() * 3) * 1000;
 
     function buildStars() {
-      stars = Array.from({ length: 130 }, () => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 1.3 + 0.2,
-        base: Math.random() * 0.45 + 0.15,
-        phase: Math.random() * Math.PI * 2,
-        freq: Math.random() * 0.5 + 0.15,
-        speed: Math.random() * 0.08 + 0.02,
-      }));
+      stars = Array.from({ length: 320 }, () => {
+        const blue = Math.random() < 0.4;
+        return {
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 1.4 + 0.2,
+          base: Math.random() * 0.5 + 0.2,
+          phase: Math.random() * Math.PI * 2,
+          freq: Math.random() * 0.5 + 0.15,
+          speed: Math.random() * 0.08 + 0.02,
+          color: blue
+            ? `${140 + Math.floor(Math.random() * 40)},${180 + Math.floor(Math.random() * 40)},255`
+            : `255,255,255`,
+        };
+      });
     }
 
     function spawnShooter(ms) {
@@ -60,10 +66,10 @@ export default function StarField({ dark }) {
       // Static stars — solo en dark mode
       if (isDark) {
         for (const s of stars) {
-          const alpha = s.base + Math.sin(t * s.freq + s.phase) * 0.2;
+          const alpha = s.base + Math.sin(t * s.freq + s.phase) * 0.25;
           ctx.beginPath();
           ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255,255,255,${Math.max(0, Math.min(1, alpha))})`;
+          ctx.fillStyle = `rgba(${s.color},${Math.max(0, Math.min(1, alpha))})`;
           ctx.fill();
           s.y -= s.speed;
           if (s.y < -2) { s.y = canvas.height + 2; s.x = Math.random() * canvas.width; }

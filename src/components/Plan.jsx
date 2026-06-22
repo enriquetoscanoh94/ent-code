@@ -1,15 +1,34 @@
+import { motion } from "motion/react";
 import { CheckIcon } from "./icons";
 import { scrollToSection } from "../utils/scroll";
+import { fadeUp, scaleIn, staggerParent, viewportOnce, EASE_OUT_EXPO } from "../utils/motion";
+
+const featureItem = {
+  hidden: { opacity: 0, x: -10 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.4, ease: EASE_OUT_EXPO } },
+};
 
 export default function Plan({ t }) {
   return (
     <section id="plan" className="section">
-      <div className="sectionHead">
+      <motion.div
+        className="sectionHead"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={viewportOnce}
+      >
         <h2>{t.planTitle}</h2>
         <p>{t.planSubtitle}</p>
-      </div>
+      </motion.div>
 
-      <div className="planSingle">
+      <motion.div
+        className="planSingle"
+        variants={scaleIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={viewportOnce}
+      >
         <div className="planSingleCard">
           <div className="planAccentBar" />
           <div className="planSingleInner">
@@ -28,17 +47,23 @@ export default function Plan({ t }) {
               </button>
             </div>
 
-            <ul className="planSingleFeatures">
+            <motion.ul
+              className="planSingleFeatures"
+              variants={staggerParent(0.05, 0.3)}
+              initial="hidden"
+              whileInView="show"
+              viewport={viewportOnce}
+            >
               {t.planFeatures.map((f) => (
-                <li key={f}>
+                <motion.li key={f} variants={featureItem}>
                   <CheckIcon />
                   {f}
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

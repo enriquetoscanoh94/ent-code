@@ -3,6 +3,7 @@ import copy from "../data/copy";
 import { useApp } from "../context/AppContext";
 import { PhoneIcon, SmsIcon, WhatsappIcon, FacebookIcon, GlobeIcon, InstagramIcon, EmailIcon, SaveContactIcon } from "../components/icons";
 import { TEL_HREF, SMS_HREF, EMAIL_HREF, WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL, WEBSITE_URL, PHONE_DISPLAY, PHONE, EMAIL } from "../data/contact";
+import "../styles/nfc.css";
 
 function downloadVCard() {
   const vcard = [
@@ -27,7 +28,7 @@ function downloadVCard() {
 }
 
 export default function ContactPage() {
-  const { lang, toggleLang } = useApp();
+  const { lang, dark, toggleLang } = useApp();
   const t = copy[lang];
 
   const buttons = [
@@ -41,7 +42,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="site dark nfcPage">
+    <div className={`site ${dark ? "dark" : ""} nfcPage`}>
       <div className="nfcHeader">
         <Link to="/">
           <img src="/logo.png" alt="ENT-CODE" />

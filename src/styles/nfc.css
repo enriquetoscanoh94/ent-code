@@ -1,0 +1,104 @@
+/* ── NFC CONTACT PAGE ────────────────────── */
+
+.nfcPage {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 20px 64px;
+}
+
+.nfcHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.nfcHeader img {
+  height: 120px;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+.nfcHeader p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #a0a0b0;
+}
+
+.nfcLangBtn {
+  margin-bottom: 40px;
+}
+
+.nfcButtons {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nfcBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 52px;
+  border-radius: 999px;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 900;
+  font-family: inherit;
+  color: #ffffff;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: transform 0.2s ease;
+}
+
+.nfcBtn:hover {
+  transform: translateY(-2px);
+}
+
+.nfcBtn--primary {
+  background: linear-gradient(90deg, #22c55e, #7c3aed);
+  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.35);
+  border: none;
+}
+
+.nfcBtn--secondary {
+  background: #13131c;
+  color: #e2e2f0;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.nfcBtn--ghost {
+  background: transparent;
+  color: #a0a0b0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.nfcBtn--ghost:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #c0c0d4;
+}
+
+.nfcBtnIcon--phone { color: #4ade80; }
+.nfcBtnIcon--sms   { color: #d1d5db; }
+.nfcBtnIcon--wa    { color: #4ade80; }
+.nfcBtnIcon--fb    { color: #60a5fa; }
+.nfcBtnIcon--web   { color: #a78bfa; }
+.nfcBtnIcon--ig    { color: #f472b6; }
+.nfcBtnIcon--email { color: #93c5fd; }
+
+.nfcBtn--save {
+  background: linear-gradient(90deg, #22c55e, #7c3aed);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.45);
+  border: none;
+  cursor: pointer;
+  height: 60px;
+  font-size: 16px;
+  margin-bottom: 4px;
+}

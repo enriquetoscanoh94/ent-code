@@ -17,6 +17,12 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+html.dark body {
+  background-color: #07070a;
 }
 
 .site {
@@ -27,8 +33,8 @@ body {
   background:
     radial-gradient(circle at top left, rgba(34, 197, 94, 0.18), transparent 32rem),
     radial-gradient(circle at top right, rgba(124, 58, 237, 0.14), transparent 34rem),
-    #ffffff;
-  transition: background 0.3s ease, color 0.3s ease;
+    transparent;
+  transition: color 0.3s ease;
 }
 
 .site.dark {
@@ -44,6 +50,35 @@ a {
   text-decoration: none;
 }
 
+
+/* ── NEBULOSA CÓSMICA ────────────────────── */
+
+.nebula {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url("/nebula-bg.jpg") center/cover no-repeat;
+  opacity: 0.38;
+  animation: nebulaDrift 55s ease-in-out infinite alternate;
+  will-change: transform;
+  transition: opacity 0.3s ease;
+}
+
+.nebula--dark {
+  opacity: 0.7;
+}
+
+@keyframes nebulaDrift {
+  0%   { transform: scale(1) rotate(0deg) translate(0, 0); }
+  50%  { transform: scale(1.12) rotate(2deg) translate(-1%, 1%); }
+  100% { transform: scale(1.22) rotate(4deg) translate(1%, -1%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nebula { animation: none !important; }
+}
+
 /* ── NAVBAR ─────────────────────────────── */
 
 .navbar {
@@ -52,7 +87,7 @@ a {
   left: 0;
   right: 0;
   z-index: 100;
-  height: 115px;
+  height: 120px;
   overflow: visible;
   display: flex;
   align-items: center;
@@ -90,7 +125,7 @@ a {
 
 .brand img {
   width: auto;
-  height: 160px;
+  height: 140px;
   display: block;
   flex-shrink: 0;
 }
@@ -99,7 +134,7 @@ a {
   display: flex;
   gap: 28px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .navlinks a {
@@ -145,8 +180,9 @@ a {
 }
 
 .iconBtn {
-  min-height: 38px;
+  min-height: 44px;
   min-width: 52px;
+  touch-action: manipulation;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 999px;
   background: #ffffff;
@@ -161,6 +197,14 @@ a {
 
 .iconBtn:hover {
   background: #f4f4f8;
+}
+
+.iconBtn--theme {
+  min-width: 44px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dark .iconBtn {
@@ -232,6 +276,7 @@ a {
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -283,7 +328,7 @@ a {
   color: #047857;
   background: rgba(34, 197, 94, 0.1);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .dark .eyebrow {
@@ -343,10 +388,11 @@ h2 {
   border-radius: 999px;
   padding: 0 28px;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 900;
   font-family: inherit;
   border: 1px solid transparent;
   cursor: pointer;
+  touch-action: manipulation;
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
@@ -423,7 +469,7 @@ h2 {
 .contactForm {
   border: 1px solid rgba(0, 0, 0, 0.09);
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 20px 70px rgba(0, 0, 0, 0.07);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -431,8 +477,8 @@ h2 {
 
 .dark .card,
 .dark .contactForm {
-  border-color: rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(15, 15, 25, 0.96);
   box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
 }
 
@@ -453,7 +499,7 @@ h2 {
 
 .card h3 {
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: -0.03em;
   margin-bottom: 10px;
 }
@@ -535,7 +581,7 @@ h2 {
 .directLabel {
   margin-bottom: 14px;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 900;
   color: #888;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -559,7 +605,7 @@ h2 {
   border-radius: 999px;
   padding: 0 18px;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 900;
   font-family: inherit;
   color: #ffffff;
   border: none;
@@ -624,7 +670,7 @@ textarea {
   font: inherit;
   font-size: 14px;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 input::placeholder,
@@ -640,8 +686,8 @@ textarea:focus {
 
 .dark input,
 .dark textarea {
-  border-color: rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(20, 20, 30, 0.94);
   color: #ffffff;
 }
 
@@ -678,6 +724,11 @@ textarea {
   gap: 16px;
   padding: 48px 24px;
   text-align: center;
+}
+
+.successMsg .btn,
+.errorMsg .btn {
+  margin-top: 8px;
 }
 
 .successMsg span,
@@ -735,7 +786,7 @@ textarea {
 }
 
 .footerTop .brand img {
-  height: 140px;
+  height: 80px;
 }
 
 .footerBottom {
@@ -763,7 +814,7 @@ textarea {
   display: flex;
   gap: 20px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: #a0a0b0;
 }
 
@@ -790,7 +841,7 @@ textarea {
   }
 
   .brand img {
-    height: 110px;
+    height: 72px;
   }
 
   .navlinks {
@@ -862,7 +913,7 @@ textarea {
   }
 
   .brand img {
-    height: 86px;
+    height: 60px;
   }
 
   .navlinks.open {
@@ -999,7 +1050,7 @@ textarea {
   }
 
   .footerTop .brand img {
-    height: 100px;
+    height: 56px;
   }
 
   .footerBottom {
@@ -1077,7 +1128,7 @@ textarea {
 
 .dark .planSingleCard {
   border-color: rgba(34, 197, 94, 0.35);
-  background: rgba(10, 20, 12, 0.85);
+  background: rgba(10, 20, 12, 0.98);
   box-shadow:
     0 0 0 4px rgba(34, 197, 94, 0.08),
     0 12px 80px rgba(34, 197, 94, 0.18),
@@ -1163,7 +1214,7 @@ textarea {
   align-items: center;
   gap: 10px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   color: #3a3a4a;
   line-height: 1.4;
 }
@@ -1208,7 +1259,7 @@ textarea {
   padding: 32px 28px;
   border: 1px solid rgba(0, 0, 0, 0.09);
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
@@ -1216,8 +1267,8 @@ textarea {
 }
 
 .dark .whyCard {
-  border-color: rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(15, 15, 25, 0.96);
 }
 
 .whyCard:hover {
@@ -1249,7 +1300,7 @@ textarea {
 
 .whyCard h3 {
   font-size: 17px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: -0.03em;
   margin-bottom: 10px;
 }
@@ -1283,13 +1334,15 @@ textarea {
   border: 1px solid rgba(0, 0, 0, 0.09);
   border-radius: 24px;
   overflow: hidden;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   cursor: default;
 }
 
 .dark .portfolioCard {
-  border-color: rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(15, 15, 25, 0.96);
 }
 
 
@@ -1308,7 +1361,7 @@ textarea {
 
 .portfolioCard h3 {
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: -0.03em;
   margin: 8px 0 10px;
 }
@@ -1335,7 +1388,7 @@ textarea {
   padding: 4px 12px;
   border-radius: 999px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   background: rgba(0, 0, 0, 0.06);
   color: #3a3a4a;
 }
@@ -1469,107 +1522,40 @@ textarea {
   background: transparent;
 }
 
-/* ── NFC CONTACT PAGE ────────────────────── */
+/* ── ERROR BOUNDARY ──────────────────────── */
 
-.nfcPage {
+.errorFallback {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 48px 20px 64px;
-}
-
-.nfcHeader {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.nfcHeader img {
-  height: 120px;
-  display: block;
-  margin: 0 auto 16px;
-}
-
-.nfcHeader p {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #a0a0b0;
-}
-
-.nfcLangBtn {
-  margin-bottom: 40px;
-}
-
-.nfcButtons {
-  width: 100%;
-  max-width: 320px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.nfcBtn {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 10px;
-  height: 52px;
-  border-radius: 999px;
-  width: 100%;
-  font-size: 15px;
-  font-weight: 800;
-  font-family: inherit;
-  color: #ffffff;
-  text-decoration: none;
-  transition: transform 0.2s ease;
+  text-align: center;
+  padding: 32px 20px;
+  gap: 16px;
 }
 
-.nfcBtn:hover {
-  transform: translateY(-2px);
+.errorFallback h1 {
+  font-size: clamp(28px, 5vw, 44px);
+  margin-bottom: 8px;
 }
 
-.nfcBtn--primary {
-  background: linear-gradient(90deg, #22c55e, #7c3aed);
-  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.35);
-  border: none;
-}
-
-.nfcBtn--secondary {
-  background: #13131c;
-  color: #e2e2f0;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-}
-
-.nfcBtn--ghost {
-  background: transparent;
-  color: #a0a0b0;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.nfcBtn--ghost:hover {
-  border-color: rgba(255, 255, 255, 0.25);
-  color: #c0c0d4;
-}
-
-.nfcBtnIcon--phone { color: #4ade80; }
-.nfcBtnIcon--sms   { color: #d1d5db; }
-.nfcBtnIcon--wa    { color: #4ade80; }
-.nfcBtnIcon--fb    { color: #60a5fa; }
-.nfcBtnIcon--web   { color: #a78bfa; }
-.nfcBtnIcon--ig    { color: #f472b6; }
-.nfcBtnIcon--email { color: #93c5fd; }
-
-.nfcBtn--save {
-  background: linear-gradient(90deg, #22c55e, #7c3aed);
-  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.45);
-  border: none;
-  cursor: pointer;
-  height: 60px;
+.errorFallback p {
+  max-width: 420px;
   font-size: 16px;
-  margin-bottom: 4px;
+  color: #63666d;
+}
+
+html.dark .errorFallback p {
+  color: #b0b0c0;
+}
+
+.errorActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
 }
 
 /* ── ACCESSIBILITY ───────────────────────── */
@@ -1595,14 +1581,13 @@ textarea {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .planAccentBar,
+  .portfolioHeart,
+  .nebula {
+    animation: none !important;
+  }
   .planAccentBar {
-    animation: none;
     background: #22c55e;
     background-size: unset;
-  }
-
-  * {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
   }
 }

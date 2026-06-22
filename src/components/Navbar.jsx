@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useScrolled } from "../hooks/useScrolled";
 import { scrollToSection } from "../utils/scroll";
+import { SunIcon, MoonIcon } from "./icons";
 
 export default function Navbar({ t, dark, onLangToggle, onDarkToggle }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,8 +41,12 @@ export default function Navbar({ t, dark, onLangToggle, onDarkToggle }) {
           <button className="iconBtn" onClick={onLangToggle} aria-label="Cambiar idioma">
             {t.lang}
           </button>
-          <button className="iconBtn" onClick={onDarkToggle} aria-label="Cambiar tema">
-            {dark ? "Claro" : "Oscuro"}
+          <button
+            className="iconBtn iconBtn--theme"
+            onClick={onDarkToggle}
+            aria-label={dark ? "Cambiar a tema claro" : "Cambiar a tema oscuro"}
+          >
+            {dark ? <SunIcon /> : <MoonIcon />}
           </button>
           <button
             className={`hamburger${menuOpen ? " active" : ""}`}

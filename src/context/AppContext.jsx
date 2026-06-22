@@ -7,9 +7,9 @@ export function AppProvider({ children }) {
   const [dark, setDark] = useState(true);
 
   useEffect(() => {
-    document.body.style.backgroundColor = dark ? "#07070a" : "#ffffff";
-    document.body.style.transition = "background-color 0.3s ease";
-  }, [dark]);
+    document.documentElement.classList.toggle("dark", dark);
+    document.documentElement.lang = lang;
+  }, [dark, lang]);
 
   const toggleLang = () => setLang((l) => (l === "es" ? "en" : "es"));
   const toggleDark = () => setDark((d) => !d);

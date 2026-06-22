@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ENT-CODE</title>
+    <script>
+      // SPA redirect: convierte /contact en /?p=/contact y vuelve a index.html
+      // index.html lo procesa con history.replaceState para que React Router lo vea como una ruta normal.
+      var path = window.location.pathname.replace(/^\/+/, "");
+      var query = window.location.search ? "&q=" + encodeURIComponent(window.location.search.slice(1)) : "";
+      window.location.replace("/?p=/" + path + query + window.location.hash);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -70,6 +70,12 @@ const copy = {
       "Sitios y herramientas construidas para negocios reales con resultados medibles.",
     portfolio: [
       {
+        name: "Vision13",
+        category: "Óptica online / E-commerce",
+        description: "Tienda online de lentes graduados y de sol en USA. Pago con Stripe, subida segura de receta médica, panel admin y bilingüe EN/ES.",
+        linkLabel: "vision-13.com",
+      },
+      {
         name: "Sonar Pro Audio",
         category: "Tienda de audio / E-commerce",
         description: "Sitio web para distribuidor de equipos de audio profesional en South Florida. Catálogo de productos, formulario de contacto y posicionamiento local.",
@@ -145,6 +151,7 @@ const copy = {
     },
     sending: "Enviando...",
     submit: "Enviar solicitud",
+    sendAnother: "Enviar otro mensaje",
     agencyTagline: "Agencia Digital",
     successMsg: "¡Solicitud enviada! Te contactamos pronto.",
     errorMsg: "No pudimos enviar tu mensaje. Contáctanos por WhatsApp.",
@@ -227,6 +234,12 @@ const copy = {
       "Sites and tools built for real businesses with measurable results.",
     portfolio: [
       {
+        name: "Vision13",
+        category: "Online optics / E-commerce",
+        description: "Online store for prescription and sunglasses in the USA. Stripe checkout, secure prescription upload, admin panel and bilingual EN/ES.",
+        linkLabel: "vision-13.com",
+      },
+      {
         name: "Sonar Pro Audio",
         category: "Audio store / E-commerce",
         description: "Website for a professional audio equipment distributor in South Florida. Product catalog, contact form and local positioning.",
@@ -302,6 +315,7 @@ const copy = {
     },
     sending: "Sending...",
     submit: "Send request",
+    sendAnother: "Send another message",
     agencyTagline: "Digital Agency",
     successMsg: "Request sent! We'll contact you soon.",
     errorMsg: "We couldn't send your message. Contact us on WhatsApp.",
