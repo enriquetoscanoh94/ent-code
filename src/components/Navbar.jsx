@@ -2,9 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useScrolled } from "../hooks/useScrolled";
 import { scrollToSection } from "../utils/scroll";
-import { SunIcon, MoonIcon } from "./icons";
 
-export default function Navbar({ t, dark, onLangToggle, onDarkToggle }) {
+export default function Navbar({ t, onLangToggle }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const scrolled = useScrolled();
 
@@ -16,7 +15,7 @@ export default function Navbar({ t, dark, onLangToggle, onDarkToggle }) {
     <>
       <nav className={`navbar${scrolled ? " scrolled" : ""}`}>
         <Link to="/" className="brand" onClick={closeMenu}>
-          <img src="/logo.png" alt="ENT-CODE logo" />
+          <img src="/logo.webp" alt="ENT-CODE logo" fetchPriority="high" />
         </Link>
 
         <div className={`navlinks${menuOpen ? " open" : ""}`}>
@@ -38,15 +37,8 @@ export default function Navbar({ t, dark, onLangToggle, onDarkToggle }) {
         </div>
 
         <div className="actions">
-          <button className="iconBtn" onClick={onLangToggle} aria-label="Cambiar idioma">
+          <button className="iconBtn" onClick={onLangToggle} aria-label={t.langBtnLabel}>
             {t.lang}
-          </button>
-          <button
-            className="iconBtn iconBtn--theme"
-            onClick={onDarkToggle}
-            aria-label={dark ? "Cambiar a tema claro" : "Cambiar a tema oscuro"}
-          >
-            {dark ? <SunIcon /> : <MoonIcon />}
           </button>
           <button
             className={`hamburger${menuOpen ? " active" : ""}`}

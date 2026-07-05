@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 export function useScrolled(threshold = 20) {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(() => window.scrollY > threshold);
 
   useEffect(() => {
     let ticking = false;
-    let currentScrolled = false;
+    let currentScrolled = window.scrollY > threshold;
 
     const onScroll = () => {
       if (ticking) return;
@@ -20,8 +20,6 @@ export function useScrolled(threshold = 20) {
       });
     };
 
-    currentScrolled = window.scrollY > threshold;
-    setScrolled(currentScrolled);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [threshold]);

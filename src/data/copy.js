@@ -2,11 +2,11 @@ const copy = {
   es: {
     nav: [
       { label: "Servicios",   id: "services" },
-      { label: "Precio",      id: "plan" },
       { label: "Portafolio",  id: "portfolio" },
       { label: "Contacto",    id: "contact" },
     ],
     lang: "EN",
+    langBtnLabel: "Switch to English",
     eyebrow: "Agencia full-stack para negocios modernos",
     headline: {
       before: "Presencia digital que convierte visitas en ",
@@ -14,6 +14,8 @@ const copy = {
     },
     subtitle:
       "ENT-CODE construye sitios web, automatizaciones, branding e integraciones listas para lanzar tu negocio con una imagen profesional.",
+    ctaPrimary: "Quiero mi sitio web",
+    ctaSecondary: "Ver portafolio",
     servicesTitle: "Todo lo que tu negocio necesita en digital",
     servicesSubtitle:
       "Diseñado con metodología de análisis de nicho y neuromarketing para mejorar claridad, confianza y conversión.",
@@ -27,24 +29,6 @@ const copy = {
       { title: "E-commerce",              description: "Estructuras para vender productos, servicios o paquetes digitales de forma directa." },
       { title: "Dominio, hosting y QR",   description: "Código QR personalizado, dominio, publicación y configuración inicial del sitio." },
     ],
-    planTitle: "Tu presencia digital lista para vender",
-    planSubtitle: "Un solo paquete con todo lo que tu negocio necesita para arrancar en línea de forma profesional.",
-    planBadge: "Todo incluido",
-    planName: "Paquete Completo",
-    planPrice: "$249",
-    planTagline: "Sin costos escondidos. Sin contratos. Listo en 1-2 semanas.",
-    planFeatures: [
-      "Sitio web profesional (landing page)",
-      "Logo diseñado para tu negocio",
-      "Dominio .com incluido (1 año)",
-      "Hosting incluido (1 año)",
-      "Instagram vinculado",
-      "Código QR personalizado",
-      "Bilingüe (español e inglés)",
-      "Diseño responsive (móvil y desktop)",
-      "Formulario de contacto",
-    ],
-    planCta: "Quiero mi sitio web",
     whyTitle: "¿Por qué ENT-CODE?",
     whySubtitle:
       "No vendemos plantillas. Construimos presencia digital a medida con código limpio, resultados reales y comunicación directa.",
@@ -68,68 +52,6 @@ const copy = {
     portfolioTitle: "Nuestros clientes favoritos",
     portfolioSubtitle:
       "Sitios y herramientas construidas para negocios reales con resultados medibles.",
-    portfolio: [
-      {
-        name: "Vision13",
-        category: "Óptica online / E-commerce",
-        description: "Tienda online de lentes graduados y de sol en USA. Pago con Stripe, subida segura de receta médica, panel admin y bilingüe EN/ES.",
-        linkLabel: "vision-13.com",
-      },
-      {
-        name: "Sonar Pro Audio",
-        category: "Tienda de audio / E-commerce",
-        description: "Sitio web para distribuidor de equipos de audio profesional en South Florida. Catálogo de productos, formulario de contacto y posicionamiento local.",
-        linkLabel: "sonarproaudio.com",
-      },
-      {
-        name: "Roma Records",
-        category: "Sello discográfico / Música",
-        description: "Sitio web para sello discográfico independiente. Presenta artistas, lanzamientos y contenido de la disquera con diseño oscuro y elegante.",
-        linkLabel: "romarecords.llc",
-      },
-      {
-        name: "Calderoni Gardens",
-        category: "Landscaping / South Florida",
-        description: "Sitio web para empresa de paisajismo con galería de proyectos, formulario de cotización y posicionamiento en Google Maps.",
-        linkLabel: "calderonisgarden.com",
-      },
-      {
-        name: "Carwash Detail Go",
-        category: "Auto detailing / Servicios",
-        description: "Sitio web para empresa de lavado y detallado de autos a domicilio. Presentación de servicios, paquetes y formulario de reserva.",
-        linkLabel: "carwashdetailgo.com",
-      },
-      {
-        name: "The Penguin Auto Mobile Detailing",
-        category: "Auto detailing móvil / Georgia, USA",
-        description: "Sitio web para empresa de detallado móvil en Georgia. Paquetes de servicio, galería y posicionamiento local con dominio propio.",
-        linkLabel: "thepenguincardetailing.com",
-      },
-      {
-        name: "Gallardo's House Cleaning",
-        category: "Limpieza de casas / Servicios",
-        description: "Sitio web para empresa de limpieza residencial y comercial. Servicios, área de cobertura y formulario de cotización rápida.",
-        linkLabel: "gallardoshousecleaning.com",
-      },
-      {
-        name: "OpenClaw VEGA",
-        category: "Bot de ventas / IA",
-        description: "Bot de Messenger con inteligencia artificial para automatizar respuestas y ventas 24/7, integrado con OpenAI y la API de Meta.",
-        linkLabel: null,
-      },
-      {
-        name: "Bot WhatsApp Citas",
-        category: "Automatización / WhatsApp",
-        description: "Sistema de agendamiento automático por WhatsApp para salones, clínicas y servicios. Confirma, reagenda y recuerda citas 24/7.",
-        linkLabel: null,
-      },
-      {
-        name: "Bot WhatsApp Ventas",
-        category: "E-commerce / WhatsApp",
-        description: "Catálogo interactivo y sistema de ventas por WhatsApp. El cliente navega productos, hace pedidos y paga sin salir de la app.",
-        linkLabel: null,
-      },
-    ],
     contactTitle: "Hablemos de tu proyecto",
     contactSubtitle:
       "Déjanos tus datos y cuéntanos qué necesitas. Te responderemos con el siguiente paso para iniciar.",
@@ -166,11 +88,11 @@ const copy = {
   en: {
     nav: [
       { label: "Services",  id: "services" },
-      { label: "Pricing",   id: "plan" },
       { label: "Portfolio", id: "portfolio" },
       { label: "Contact",   id: "contact" },
     ],
     lang: "ES",
+    langBtnLabel: "Cambiar a español",
     eyebrow: "Full-stack agency for modern businesses",
     headline: {
       before: "Digital presence that turns visitors into ",
@@ -178,6 +100,8 @@ const copy = {
     },
     subtitle:
       "ENT-CODE builds websites, automations, branding and integrations ready to launch your business with a professional image.",
+    ctaPrimary: "I want my website",
+    ctaSecondary: "See portfolio",
     servicesTitle: "Everything your business needs online",
     servicesSubtitle:
       "Designed with niche research and neuromarketing methodology to improve clarity, trust and conversion.",
@@ -191,24 +115,6 @@ const copy = {
       { title: "E-commerce",              description: "Structures to sell products, services or digital packages directly." },
       { title: "Domain, hosting and QR",  description: "Custom QR code, domain, publishing and initial website setup." },
     ],
-    planTitle: "Your digital presence ready to sell",
-    planSubtitle: "One package with everything your business needs to launch online professionally.",
-    planBadge: "All included",
-    planName: "Complete Package",
-    planPrice: "$249",
-    planTagline: "No hidden costs. No contracts. Ready in 1-2 weeks.",
-    planFeatures: [
-      "Professional website (landing page)",
-      "Logo designed for your business",
-      ".com domain included (1 year)",
-      "Hosting included (1 year)",
-      "Instagram linked",
-      "Custom QR code",
-      "Bilingual (Spanish & English)",
-      "Responsive design (mobile & desktop)",
-      "Contact form",
-    ],
-    planCta: "I want my website",
     whyTitle: "Why ENT-CODE?",
     whySubtitle:
       "We don't sell templates. We build custom digital presence with clean code, real results and direct communication.",
@@ -232,68 +138,6 @@ const copy = {
     portfolioTitle: "Our favorite clients",
     portfolioSubtitle:
       "Sites and tools built for real businesses with measurable results.",
-    portfolio: [
-      {
-        name: "Vision13",
-        category: "Online optics / E-commerce",
-        description: "Online store for prescription and sunglasses in the USA. Stripe checkout, secure prescription upload, admin panel and bilingual EN/ES.",
-        linkLabel: "vision-13.com",
-      },
-      {
-        name: "Sonar Pro Audio",
-        category: "Audio store / E-commerce",
-        description: "Website for a professional audio equipment distributor in South Florida. Product catalog, contact form and local positioning.",
-        linkLabel: "sonarproaudio.com",
-      },
-      {
-        name: "Roma Records",
-        category: "Record label / Music",
-        description: "Website for an independent record label. Showcases artists, releases and label content with a dark, elegant design.",
-        linkLabel: "romarecords.llc",
-      },
-      {
-        name: "Calderoni Gardens",
-        category: "Landscaping / South Florida",
-        description: "Website for a landscaping company with project gallery, quote form and Google Maps positioning.",
-        linkLabel: "calderonisgarden.com",
-      },
-      {
-        name: "Carwash Detail Go",
-        category: "Auto detailing / Services",
-        description: "Website for a mobile car wash and detailing company. Service presentation, packages and booking form.",
-        linkLabel: "carwashdetailgo.com",
-      },
-      {
-        name: "The Penguin Auto Mobile Detailing",
-        category: "Mobile auto detailing / Georgia, USA",
-        description: "Website for a mobile detailing company in Georgia. Service packages, gallery and local positioning with custom domain.",
-        linkLabel: "thepenguincardetailing.com",
-      },
-      {
-        name: "Gallardo's House Cleaning",
-        category: "House cleaning / Services",
-        description: "Website for a residential and commercial cleaning company. Services, coverage area and quick quote form.",
-        linkLabel: "gallardoshousecleaning.com",
-      },
-      {
-        name: "OpenClaw VEGA",
-        category: "Sales bot / AI",
-        description: "Messenger bot with artificial intelligence to automate 24/7 responses and sales, integrated with OpenAI and Meta API.",
-        linkLabel: null,
-      },
-      {
-        name: "WhatsApp Appointment Bot",
-        category: "Automation / WhatsApp",
-        description: "Automatic scheduling system via WhatsApp for salons, clinics and services. Confirms, reschedules and reminds clients 24/7.",
-        linkLabel: null,
-      },
-      {
-        name: "WhatsApp Sales Bot",
-        category: "E-commerce / WhatsApp",
-        description: "Interactive catalog and sales system via WhatsApp. Customers browse products, place orders and pay without leaving the app.",
-        linkLabel: null,
-      },
-    ],
     contactTitle: "Let's talk about your project",
     contactSubtitle:
       "Leave your details and tell us what you need. We will reply with the next step to begin.",

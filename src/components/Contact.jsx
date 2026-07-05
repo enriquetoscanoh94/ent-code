@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { motion } from "motion/react";
 import emailjs from "@emailjs/browser";
 import { SmsIcon, WhatsappIcon, FacebookIcon } from "./icons";
 import { SMS_HREF, WHATSAPP_URL, FACEBOOK_URL } from "../data/contact";
-import { fadeUp, staggerParent, viewportOnce, EASE_OUT_EXPO } from "../utils/motion";
 
 const EJ_SERVICE  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EJ_TEMPLATE = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -15,11 +13,6 @@ if (!EMAIL_READY) {
 }
 
 const EMPTY_FIELDS = { name: "", email: "", phone: "", business: "", message: "", honeypot: "" };
-
-const directBtnVariant = {
-  hidden: { opacity: 0, y: 14 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: EASE_OUT_EXPO } },
-};
 
 export default function Contact({ t }) {
   const [fields, setFields] = useState(EMPTY_FIELDS);
@@ -64,54 +57,35 @@ export default function Contact({ t }) {
 
   return (
     <section id="contact" className="section contactSection">
-      <motion.div
-        className="sectionHead narrow"
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={viewportOnce}
-      >
+      <div className="sectionHead narrow">
         <h2>{t.contactTitle}</h2>
         <p>{t.contactSubtitle}</p>
         <div className="smsBlock">
           <p className="directLabel">{t.directLabel}</p>
-          <motion.div
-            className="directBtns"
-            variants={staggerParent(0.08, 0.1)}
-            initial="hidden"
-            whileInView="show"
-            viewport={viewportOnce}
-          >
-            <motion.a href={SMS_HREF} className="directBtn directBtn--sms" variants={directBtnVariant}>
+          <div className="directBtns">
+            <a href={SMS_HREF} className="directBtn directBtn--sms">
               <SmsIcon />
               {t.smsBtn}
-            </motion.a>
-            <motion.a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="directBtn directBtn--wa" variants={directBtnVariant}>
+            </a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="directBtn directBtn--wa">
               <WhatsappIcon />
               {t.whatsappBtn}
-            </motion.a>
-            <motion.a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" className="directBtn directBtn--fb" variants={directBtnVariant}>
+            </a>
+            <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" className="directBtn directBtn--fb">
               <FacebookIcon />
               {t.facebookBtn}
-            </motion.a>
-          </motion.div>
+            </a>
+          </div>
         </div>
-      </motion.div>
+      </div>
 
-      <motion.form
-        className="contactForm"
-        onSubmit={handleSubmit}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={viewportOnce}
-        transition={{ duration: 0.7, ease: EASE_OUT_EXPO }}
-      >
+      <form className="contactForm" onSubmit={handleSubmit}>
         {status === "success" && (
           <div className="successMsg">
             <span>✓</span>
             <p>{t.successMsg}</p>
             <button type="button" className="btn ghost" onClick={resetForm}>
-              {t.sendAnother || (t.submit + " otro")}
+              {t.sendAnother}
             </button>
           </div>
         )}
@@ -162,7 +136,7 @@ export default function Contact({ t }) {
             </button>
           </>
         )}
-      </motion.form>
+      </form>
     </section>
   );
 }

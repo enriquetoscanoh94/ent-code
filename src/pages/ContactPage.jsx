@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import copy from "../data/copy";
-import { useApp } from "../context/AppContext";
+import { useApp } from "../context/useApp";
 import { PhoneIcon, SmsIcon, WhatsappIcon, FacebookIcon, GlobeIcon, InstagramIcon, EmailIcon, SaveContactIcon } from "../components/icons";
 import { TEL_HREF, SMS_HREF, EMAIL_HREF, WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL, WEBSITE_URL, PHONE_DISPLAY, PHONE, EMAIL } from "../data/contact";
+import StarField from "../components/StarField";
 import "../styles/nfc.css";
 
 function downloadVCard() {
@@ -28,7 +29,7 @@ function downloadVCard() {
 }
 
 export default function ContactPage() {
-  const { lang, dark, toggleLang } = useApp();
+  const { lang, toggleLang } = useApp();
   const t = copy[lang];
 
   const buttons = [
@@ -42,10 +43,11 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className={`site ${dark ? "dark" : ""} nfcPage`}>
+    <div className="site nfcPage">
+      <StarField />
       <div className="nfcHeader">
         <Link to="/">
-          <img src="/logo.png" alt="ENT-CODE" />
+          <img src="/logo.webp" alt="ENT-CODE" fetchPriority="high" />
         </Link>
         <p>{t.agencyTagline}</p>
       </div>

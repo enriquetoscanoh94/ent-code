@@ -19,7 +19,7 @@ export default function Footer({ t }) {
     <footer className="footer">
       <div className="footerTop">
         <div className="brand">
-          <img src="/logo.png" alt="ENT-CODE logo" />
+          <img src="/logo.webp" alt="ENT-CODE logo" loading="lazy" />
         </div>
         <p>{t.footer}</p>
       </div>
