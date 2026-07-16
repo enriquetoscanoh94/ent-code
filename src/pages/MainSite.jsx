@@ -3,10 +3,11 @@ import { useApp } from "../context/useApp";
 import { useGsapEffects } from "../hooks/useGsapEffects";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import Clients from "../components/Clients";
 import Services from "../components/Services";
 import WhyUs from "../components/WhyUs";
 import Process from "../components/Process";
-import Portfolio from "../components/Portfolio";
+import TechStack from "../components/TechStack";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import StarField from "../components/StarField";
@@ -25,10 +26,13 @@ export default function MainSite() {
           los textos partidos por SplitText se regeneren con el idioma nuevo */}
       <main key={lang}>
         <Hero t={t} />
+        {/* Clientes (prueba social) van justo debajo del Hero */}
+        <Clients t={t} />
         <Services t={t} />
         <WhyUs t={t} />
         <Process t={t} />
-        <Portfolio t={t} />
+        {/* Tecnologías (respaldo técnico) van más abajo, antes de Contacto */}
+        <TechStack t={t} />
         <Contact t={t} />
         <Footer t={t} />
       </main>

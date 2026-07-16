@@ -57,7 +57,6 @@ export function useGsapEffects(lang) {
             { items: ".servicesGrid .card", trigger: ".servicesGrid", stagger: 0.06 },
             { items: ".whyCard", trigger: ".whyGrid", stagger: 0.08 },
             { items: ".processGrid .card", trigger: ".processGrid", stagger: 0.12 },
-            { items: ".portfolioListItem", trigger: ".portfolioListCard", stagger: 0.05 },
           ];
           revealGroups.forEach(({ items, trigger, stagger }) => {
             const els = gsap.utils.toArray(items);
@@ -73,7 +72,7 @@ export function useGsapEffects(lang) {
           });
 
           // contenedores sueltos
-          [".portfolioListCard", ".contactForm"].forEach((sel) => {
+          [".contactForm"].forEach((sel) => {
             if (!document.querySelector(sel)) return;
             gsap.from(sel, {
               y: 30,

@@ -22,7 +22,14 @@ export default function StarField() {
       // menos estrellas en celulares: misma vibra, menos batería
       const count = w < 640 ? 120 : 320;
       stars = Array.from({ length: count }, () => {
-        const mint = Math.random() < 0.4;
+        // mezcla: ~22% tinto, ~12% verde, el resto blancas
+        const roll = Math.random();
+        let color = `255,255,255`;
+        if (roll < 0.22) {
+          color = `${190 + Math.floor(Math.random() * 40)},${70 + Math.floor(Math.random() * 40)},${95 + Math.floor(Math.random() * 30)}`;
+        } else if (roll < 0.34) {
+          color = `${52 + Math.floor(Math.random() * 40)},${211 - Math.floor(Math.random() * 30)},${153 + Math.floor(Math.random() * 30)}`;
+        }
         return {
           x: Math.random() * w,
           y: Math.random() * h,
@@ -31,9 +38,7 @@ export default function StarField() {
           phase: Math.random() * Math.PI * 2,
           freq: Math.random() * 0.5 + 0.15,
           speed: Math.random() * 0.08 + 0.02,
-          color: mint
-            ? `${160 + Math.floor(Math.random() * 40)},255,${210 + Math.floor(Math.random() * 40)}`
-            : `255,255,255`,
+          color,
         };
       });
     }
@@ -124,12 +129,23 @@ export default function StarField() {
       animId = requestAnimationFrame(draw);
     }
 
+    // pausar el loop cuando la pestaña no está visible: ahorra batería/CPU
+    function onVisibility() {
+      cancelAnimationFrame(animId);
+      if (!document.hidden) {
+        lastMs = 0;
+        animId = requestAnimationFrame(draw);
+      }
+    }
+
     resize();
     animId = requestAnimationFrame(draw);
     window.addEventListener("resize", resize, { passive: true });
+    document.addEventListener("visibilitychange", onVisibility);
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("resize", resize);
+      document.removeEventListener("visibilitychange", onVisibility);
     };
   }, []);
 

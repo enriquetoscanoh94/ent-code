@@ -8,10 +8,6 @@ const EJ_TEMPLATE = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EJ_KEY      = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 const EMAIL_READY = Boolean(EJ_SERVICE && EJ_TEMPLATE && EJ_KEY);
 
-if (!EMAIL_READY) {
-  console.warn("EmailJS: faltan variables de entorno (VITE_EMAILJS_*). El form caerá a WhatsApp.");
-}
-
 const EMPTY_FIELDS = { name: "", email: "", phone: "", business: "", message: "", honeypot: "" };
 
 export default function Contact({ t }) {
@@ -57,7 +53,7 @@ export default function Contact({ t }) {
 
   return (
     <section id="contact" className="section contactSection">
-      <div className="sectionHead narrow">
+      <div className="sectionHead">
         <h2>{t.contactTitle}</h2>
         <p>{t.contactSubtitle}</p>
         <div className="smsBlock">

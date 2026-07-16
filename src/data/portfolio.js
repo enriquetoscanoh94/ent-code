@@ -5,9 +5,38 @@
  */
 export const PORTFOLIO = [
   {
+    id: "casadelpollo",
+    link: "mariscoscasadelpollo.com",
+    es: {
+      name: "Mariscos Casa del Pollo",
+      category: "Restaurante de mariscos / Menú digital",
+      description: "Sitio web y menú digital para restaurante de mariscos estilo Sinaloa en Salinas, California. Menú bilingüe con más de 120 platillos y fotos, ubicación y contacto, con dominio propio.",
+    },
+    en: {
+      name: "Mariscos Casa del Pollo",
+      category: "Seafood restaurant / Digital menu",
+      description: "Website and digital menu for a Sinaloa-style seafood restaurant in Salinas, California. Bilingual menu with 120+ dishes and photos, location and contact, with a custom domain.",
+    },
+  },
+  {
+    id: "detailgo",
+    link: "detailgo.app",
+    logo: "/clientes/detailgo.png",
+    es: {
+      name: "Detail Go",
+      category: "App de lavado de autos / Móvil",
+      description: "App móvil para lavado y detallado de autos a domicilio. El cliente agenda desde su teléfono y recibe el servicio en casa.",
+    },
+    en: {
+      name: "Detail Go",
+      category: "Car wash app / Mobile",
+      description: "Mobile app for on-demand car wash and detailing at home. Customers book from their phone and get the service at their door.",
+    },
+  },
+  {
     id: "vision13",
-    gradient: "linear-gradient(135deg, #022c22 0%, #064e3b 50%, #047857 100%)",
     link: "vision-13.com",
+    logo: "/clientes/vision13.png",
     es: {
       name: "Vision13",
       category: "Óptica online / E-commerce",
@@ -21,8 +50,8 @@ export const PORTFOLIO = [
   },
   {
     id: "sonar",
-    gradient: "linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #3b0764 100%)",
     link: "www.sonarproaudio.com",
+    logo: "/clientes/sonar.png",
     es: {
       name: "Sonar Pro Audio",
       category: "Tienda de audio / E-commerce",
@@ -36,8 +65,8 @@ export const PORTFOLIO = [
   },
   {
     id: "roma",
-    gradient: "linear-gradient(135deg, #1a0505 0%, #3b0000 50%, #7f1d1d 100%)",
     link: "romarecords.llc",
+    logo: "/clientes/roma.png",
     es: {
       name: "Roma Records",
       category: "Sello discográfico / Música",
@@ -51,7 +80,6 @@ export const PORTFOLIO = [
   },
   {
     id: "calderoni",
-    gradient: "linear-gradient(135deg, #052e16 0%, #14532d 50%, #166534 100%)",
     link: "calderoniservice.com",
     es: {
       name: "Calderoni Gardens",
@@ -65,23 +93,7 @@ export const PORTFOLIO = [
     },
   },
   {
-    id: "carwash",
-    gradient: "linear-gradient(135deg, #0c0a09 0%, #1c1917 50%, #292524 100%)",
-    link: "carwahsdetailgo.com",
-    es: {
-      name: "Carwash Detail Go",
-      category: "Auto detailing / Servicios",
-      description: "Sitio web para empresa de lavado y detallado de autos a domicilio. Presentación de servicios, paquetes y formulario de reserva.",
-    },
-    en: {
-      name: "Carwash Detail Go",
-      category: "Auto detailing / Services",
-      description: "Website for a mobile car wash and detailing company. Service presentation, packages and booking form.",
-    },
-  },
-  {
     id: "penguin",
-    gradient: "linear-gradient(135deg, #18181b 0%, #450a0a 50%, #dc2626 100%)",
     link: "thepenguincardetailing.com",
     es: {
       name: "The Penguin Auto Mobile Detailing",
@@ -96,7 +108,6 @@ export const PORTFOLIO = [
   },
   {
     id: "gallardos",
-    gradient: "linear-gradient(135deg, #082f49 0%, #0369a1 50%, #0ea5e9 100%)",
     link: "gallardoshousecleaning.com",
     es: {
       name: "Gallardo's House Cleaning",
@@ -109,49 +120,25 @@ export const PORTFOLIO = [
       description: "Website for a residential and commercial cleaning company. Services, coverage area and quick quote form.",
     },
   },
-  {
-    id: "vega",
-    gradient: "linear-gradient(135deg, #0c1a3a 0%, #1e3a5f 50%, #1e40af 100%)",
-    link: null,
-    es: {
-      name: "OpenClaw VEGA",
-      category: "Bot de ventas / IA",
-      description: "Bot de Messenger con inteligencia artificial para automatizar respuestas y ventas 24/7, integrado con OpenAI y la API de Meta.",
-    },
-    en: {
-      name: "OpenClaw VEGA",
-      category: "Sales bot / AI",
-      description: "Messenger bot with artificial intelligence to automate 24/7 responses and sales, integrated with OpenAI and Meta API.",
-    },
-  },
-  {
-    id: "wa-agenda",
-    gradient: "linear-gradient(135deg, #082f49 0%, #0c4a6e 55%, #075985 100%)",
-    link: null,
-    es: {
-      name: "Bot WhatsApp Citas",
-      category: "Automatización / WhatsApp",
-      description: "Sistema de agendamiento automático por WhatsApp para salones, clínicas y servicios. Confirma, reagenda y recuerda citas 24/7.",
-    },
-    en: {
-      name: "WhatsApp Appointment Bot",
-      category: "Automation / WhatsApp",
-      description: "Automatic scheduling system via WhatsApp for salons, clinics and services. Confirms, reschedules and reminds clients 24/7.",
-    },
-  },
-  {
-    id: "wa-ventas",
-    gradient: "linear-gradient(135deg, #1e1b4b 0%, #2e1065 55%, #4c1d95 100%)",
-    link: null,
-    es: {
-      name: "Bot WhatsApp Ventas",
-      category: "E-commerce / WhatsApp",
-      description: "Catálogo interactivo y sistema de ventas por WhatsApp. El cliente navega productos, hace pedidos y paga sin salir de la app.",
-    },
-    en: {
-      name: "WhatsApp Sales Bot",
-      category: "E-commerce / WhatsApp",
-      description: "Interactive catalog and sales system via WhatsApp. Customers browse products, place orders and pay without leaving the app.",
-    },
-  },
+];
+
+/*
+ * Tecnologías que usamos — tira aparte de los clientes.
+ * Logos oficiales en SVG (siempre nítidos). El nombre es igual en ES/EN.
+ */
+export const TECH = [
+  { id: "claude", name: "Claude Code", logo: "/clientes/claude.svg" },
+  { id: "openai", name: "OpenAI", logo: "/clientes/openai.svg" },
+  { id: "n8n", name: "n8n", logo: "/clientes/n8n.svg" },
+  { id: "react", name: "React", logo: "/clientes/react.svg" },
+  { id: "javascript", name: "JavaScript", logo: "/clientes/javascript.svg" },
+  { id: "typescript", name: "TypeScript", logo: "/clientes/typescript.svg" },
+  { id: "nodejs", name: "Node.js", logo: "/clientes/nodejs.svg" },
+  { id: "vite", name: "Vite", logo: "/clientes/vite.svg" },
+  { id: "tailwind", name: "Tailwind CSS", logo: "/clientes/tailwind.svg" },
+  { id: "python", name: "Python", logo: "/clientes/python.svg" },
+  { id: "firebase", name: "Firebase", logo: "/clientes/firebase.svg" },
+  { id: "stripe", name: "Stripe", logo: "/clientes/stripe.svg" },
+  { id: "paypal", name: "PayPal", logo: "/clientes/paypal.svg" },
+  { id: "whatsapp", name: "WhatsApp", logo: "/clientes/whatsapp.svg" },
 ];

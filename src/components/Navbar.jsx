@@ -19,21 +19,15 @@ export default function Navbar({ t, onLangToggle }) {
         </Link>
 
         <div className={`navlinks${menuOpen ? " open" : ""}`}>
-          {t.nav.map((item) =>
-            item.route ? (
-              <Link key={item.route} to={item.route} onClick={closeMenu}>
-                {item.label}
-              </Link>
-            ) : (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                onClick={(e) => { e.preventDefault(); scrollToSection(item.id); closeMenu(); }}
-              >
-                {item.label}
-              </a>
-            )
-          )}
+          {t.nav.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(e) => { e.preventDefault(); scrollToSection(item.id); closeMenu(); }}
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
 
         <div className="actions">

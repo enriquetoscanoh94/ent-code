@@ -1,6 +1,14 @@
 import { CodeIcon, ZapIcon, WorldIcon, MsgIcon, ShieldIcon, GitIcon } from "./icons";
 
-const WHY_ICONS = [CodeIcon, ZapIcon, WorldIcon, MsgIcon, ShieldIcon, GitIcon];
+// El ícono se asocia por nombre (no por índice del array).
+const ICONS = {
+  code: CodeIcon,
+  fast: ZapIcon,
+  bilingual: WorldIcon,
+  support: MsgIcon,
+  shield: ShieldIcon,
+  git: GitIcon,
+};
 
 export default function WhyUs({ t }) {
   return (
@@ -10,11 +18,11 @@ export default function WhyUs({ t }) {
         <p>{t.whySubtitle}</p>
       </div>
       <div className="whyGrid">
-        {t.why.map(({ title, description }, i) => {
-          const Icon = WHY_ICONS[i];
+        {t.why.map(({ icon, title, description }) => {
+          const Icon = ICONS[icon];
           return (
             <article className="whyCard" key={title}>
-              <div className="whyIcon"><Icon /></div>
+              <div className="whyIcon">{Icon && <Icon />}</div>
               <h3>{title}</h3>
               <p>{description}</p>
             </article>
