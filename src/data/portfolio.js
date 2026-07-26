@@ -7,6 +7,7 @@ export const PORTFOLIO = [
   {
     id: "casadelpollo",
     link: "mariscoscasadelpollo.com",
+    logo: "/clientes/casadelpollo.webp",
     es: {
       name: "Mariscos Casa del Pollo",
       category: "Restaurante de mariscos / Menú digital",
@@ -118,6 +119,51 @@ export const PORTFOLIO = [
       name: "Gallardo's House Cleaning",
       category: "House cleaning / Services",
       description: "Website for a residential and commercial cleaning company. Services, coverage area and quick quote form.",
+    },
+  },
+  {
+    id: "terremoto",
+    link: "terremotoproductions.com",
+    logo: "/clientes/terremoto.webp",
+    es: {
+      name: "Terremoto Sound & Lighting",
+      category: "Producción de eventos / California",
+      description: "Sitio web bilingüe para empresa de producción de eventos. Renta de audio, iluminación, pantallas LED y escenarios, con galería de trabajos y contacto directo.",
+    },
+    en: {
+      name: "Terremoto Sound & Lighting",
+      category: "Event production / California",
+      description: "Bilingual website for an event production company. Audio, lighting, LED screens and stage rental, with a work gallery and direct contact.",
+    },
+  },
+  {
+    id: "frost",
+    link: "frosthvacr.com",
+    logo: "/clientes/frost.png",
+    es: {
+      name: "FROST-HVACR",
+      category: "Refrigeración y climatización / Nueva York",
+      description: "Sitio web para empresa de refrigeración, aire acondicionado y calefacción en Nueva York. Servicios, área de cobertura y contacto para cotización.",
+    },
+    en: {
+      name: "FROST-HVACR",
+      category: "Refrigeration & HVAC / New York",
+      description: "Website for a refrigeration, air conditioning and heating company in New York. Services, coverage area and quote contact.",
+    },
+  },
+  {
+    id: "nelly",
+    link: "nellyenriquezsells.com",
+    logo: "/clientes/nelly.svg",
+    es: {
+      name: "Nelly Enríquez",
+      category: "Bienes raíces / Realtor®",
+      description: "Sitio web para Realtor® en Stockton, Modesto y el Valle Central de California. Presentación profesional, propiedades y formulario de contacto.",
+    },
+    en: {
+      name: "Nelly Enríquez",
+      category: "Real estate / Realtor®",
+      description: "Website for a Realtor® in Stockton, Modesto and California's Central Valley. Professional presentation, listings and contact form.",
     },
   },
 ];
