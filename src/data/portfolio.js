@@ -137,6 +137,21 @@ export const PORTFOLIO = [
     },
   },
   {
+    id: "mandopro",
+    link: "mandoproaudio.com",
+    logo: "/clientes/mandopro.png",
+    es: {
+      name: "Mándo Pro Audio",
+      category: "Producción de eventos / California",
+      description: "Sitio web bilingüe para empresa de producción de eventos en Santa María, California. Audio profesional, iluminación robótica, pantallas LED y escenarios, con galería de trabajos y contacto directo por WhatsApp.",
+    },
+    en: {
+      name: "Mándo Pro Audio",
+      category: "Event production / California",
+      description: "Bilingual website for an event production company in Santa María, California. Professional audio, robotic lighting, LED screens and staging, with a work gallery and direct WhatsApp contact.",
+    },
+  },
+  {
     id: "frost",
     link: "frosthvacr.com",
     logo: "/clientes/frost.png",
