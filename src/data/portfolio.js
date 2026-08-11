@@ -167,6 +167,21 @@ export const PORTFOLIO = [
     },
   },
   {
+    id: "vitalix",
+    link: "vitalixsc.com",
+    logo: "/clientes/vitalix.png",
+    es: {
+      name: "Vitalix",
+      category: "Shots y jugos naturales / Salud",
+      description: "Sitio web bilingüe para marca de shots funcionales y jugos naturales detox en South Carolina. Catálogo de productos, presentación de la marca y pedidos directos por WhatsApp, con dominio propio.",
+    },
+    en: {
+      name: "Vitalix",
+      category: "Natural shots & juices / Wellness",
+      description: "Bilingual website for a functional shots and natural detox juices brand in South Carolina. Product catalog, brand presentation and direct WhatsApp orders, with a custom domain.",
+    },
+  },
+  {
     id: "nelly",
     link: "nellyenriquezsells.com",
     logo: "/clientes/nelly.svg",
