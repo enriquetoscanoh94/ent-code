@@ -196,6 +196,51 @@ export const PORTFOLIO = [
       description: "Website for a Realtor® in Stockton, Modesto and California's Central Valley. Professional presentation, listings and contact form.",
     },
   },
+  {
+    id: "valeries",
+    link: "valeriesboutiques.com",
+    logo: "/clientes/valeries.png",
+    es: {
+      name: "Valerie's Boutique",
+      category: "Boutique de eventos / E-commerce",
+      description: "Tienda en línea para boutique de ropa y accesorios de eventos en Salinas, California. Catálogo de productos, carrito de compras y dominio propio.",
+    },
+    en: {
+      name: "Valerie's Boutique",
+      category: "Event boutique / E-commerce",
+      description: "Online store for an event clothing and accessories boutique in Salinas, California. Product catalog, shopping cart and custom domain.",
+    },
+  },
+  {
+    id: "santiz",
+    link: "santizprowashdetailing.com",
+    logo: "/clientes/santiz.png",
+    es: {
+      name: "Santiz ProWash Detailing",
+      category: "Detallado móvil / California",
+      description: "Sitio web para empresa de lavado y detallado de autos a domicilio en Lodi, California. Paquetes de servicio, galería y contacto directo con dominio propio.",
+    },
+    en: {
+      name: "Santiz ProWash Detailing",
+      category: "Mobile detailing / California",
+      description: "Website for a mobile car wash and detailing company in Lodi, California. Service packages, gallery and direct contact with a custom domain.",
+    },
+  },
+  {
+    id: "granjaesperanza",
+    link: "centroderehabilitacióngranjalaesperanza.com",
+    logo: "/clientes/granja.png",
+    es: {
+      name: "Granja La Esperanza",
+      category: "Centro de rehabilitación / Salud",
+      description: "Sitio web para centro de rehabilitación. Presentación del centro, programas y formulario de contacto para familiares, con dominio propio.",
+    },
+    en: {
+      name: "Granja La Esperanza",
+      category: "Rehabilitation center / Health",
+      description: "Website for a rehabilitation center. Center presentation, programs and a contact form for families, with a custom domain.",
+    },
+  },
 ];
 
 /*
