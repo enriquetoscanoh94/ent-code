@@ -11,6 +11,7 @@ import TechStack from "../components/TechStack";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import StarField from "../components/StarField";
+import FloatingContact from "../components/FloatingContact";
 
 export default function MainSite() {
   const { lang, toggleLang } = useApp();
@@ -36,6 +37,7 @@ export default function MainSite() {
         <Contact t={t} />
         <Footer t={t} />
       </main>
+      <FloatingContact />
     </div>
   );
 }

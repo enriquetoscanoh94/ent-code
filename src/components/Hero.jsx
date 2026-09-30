@@ -1,8 +1,5 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { SplitText } from "gsap/SplitText";
-
-gsap.registerPlugin(SplitText);
 
 export default function Hero({ t }) {
   const rootRef = useRef(null);
@@ -12,48 +9,26 @@ export default function Hero({ t }) {
 
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       const root = rootRef.current;
-      let split = null;
-      let killed = false;
 
-      // estados iniciales antes del primer paint (evita parpadeo)
+      // reveal sobrio: fade + leve subida, sin efecto letra-por-letra
       const ctx = gsap.context(() => {
-        gsap.set(".heroHeadline", { visibility: "hidden" });
-        gsap.set(".eyebrow", { clipPath: "inset(0 100% 0 0)", filter: "blur(6px)" });
-        gsap.set([".hero .subtitle", ".heroCtas .btn"], { autoAlpha: 0, y: 24 });
-        gsap.set(".heroGlow", { autoAlpha: 0, scale: 0.8 });
-        gsap.set(".heroVisual", { autoAlpha: 0, x: 40, rotateY: 6 });
+        gsap.set([".eyebrow", ".heroHeadline", ".hero .subtitle", ".heroCtas .btn"], {
+          autoAlpha: 0,
+          y: 22,
+        });
+        gsap.set(".heroGlow", { autoAlpha: 0 });
+        gsap.set(".heroVisual", { autoAlpha: 0, y: 24 });
+
+        const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+        tl.to(".heroGlow", { autoAlpha: 1, duration: 1.4 }, 0)
+          .to(".eyebrow", { autoAlpha: 1, y: 0, duration: 0.7 }, 0.1)
+          .to(".heroHeadline", { autoAlpha: 1, y: 0, duration: 0.9 }, "-=0.4")
+          .to(".hero .subtitle", { autoAlpha: 1, y: 0, duration: 0.7 }, "-=0.5")
+          .to(".heroCtas .btn", { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.09 }, "-=0.4")
+          .to(".heroVisual", { autoAlpha: 1, y: 0, duration: 0.9 }, "-=0.7");
       }, root);
 
-      // esperar fuentes para que SplitText mida bien las letras
-      document.fonts.ready.then(() => {
-        if (killed) return;
-        ctx.add(() => {
-          split = new SplitText(".heroHeadline", {
-            type: "words,chars",
-            mask: "words",
-            charsClass: "silverChar",
-          });
-          gsap.set(".heroHeadline", { visibility: "visible" });
-
-          const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-          tl.to(".heroGlow", { autoAlpha: 1, scale: 1, duration: 1.8, ease: "power2.out" }, 0)
-            .to(".eyebrow", {
-              clipPath: "inset(0 0% 0 0)",
-              filter: "blur(0px)",
-              duration: 1,
-            }, 0.15)
-            .from(split.chars, { yPercent: 130, duration: 0.85, stagger: 0.016 }, 0.35)
-            .to(".hero .subtitle", { autoAlpha: 1, y: 0, duration: 0.7 }, "-=0.45")
-            .to(".heroCtas .btn", { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.09 }, "-=0.4")
-            .to(".heroVisual", { autoAlpha: 1, x: 0, rotateY: 0, duration: 1, ease: "power3.out" }, "-=0.9");
-        });
-      });
-
-      return () => {
-        killed = true;
-        if (split) split.revert();
-        ctx.revert();
-      };
+      return () => ctx.revert();
     });
 
     return () => mm.revert();
